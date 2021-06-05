@@ -35,6 +35,19 @@ namespace ShopQuanAo
             this.nHAPHANGTableAdapter.Fill(this.dataSet1.NHAPHANG);
             // TODO: This line of code loads data into the 'dataSet1.SANPHAM' table. You can move, or remove it, as needed.
             this.sANPHAMTableAdapter.Fill(this.dataSet1.SANPHAM);
+            setdatagridview(nHAPHANGDataGridView);
+            setdatagridview(cT_NHAPHANGDataGridView);
+        }
+        public void setdatagridview(DataGridView dataGridView)
+        {
+            dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("tahoma", 10, FontStyle.Bold);
+            dataGridView.EnableHeadersVisualStyles = false;
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Crimson;
+            dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            for(int i=  0; i<dataGridView.ColumnCount;i++)
+            {
+                dataGridView.Columns[i].DefaultCellStyle.Font = new Font("tahoma", 10);
+            }    
         }
         public void catnhatphieunhap()
         {
@@ -157,12 +170,16 @@ namespace ShopQuanAo
 
         private void bnt_xuatphieunhap_Click(object sender, EventArgs e)
         {
-            bool kq = xl.LuuPN(xl.Them_Ma_PN(), DateTime.Now, don.tongThanhTien(), don.lstSP);
+            string ma = xl.Them_Ma_PN();
+            bool kq = xl.LuuPN(ma, DateTime.Now, don.tongThanhTien(), don.lstSP);
             if(kq)
             {
                 MessageBox.Show("Bạn Có Muốn Xuất Phiếu Nhập", "Thành công", MessageBoxButtons.YesNo);
                 don = new DonHang();
                 catnhatphieunhap();
+                TrangInPhieuNhap frm = new TrangInPhieuNhap();
+                frm._MaPN = ma;
+                frm.ShowDialog();
                 
             }    
         }
@@ -200,6 +217,21 @@ namespace ShopQuanAo
         private void btn_lammoinh_Click(object sender, EventArgs e)
         {
             this.nHAPHANGTableAdapter.Fill(this.dataSet1.NHAPHANG);
+        }
+
+        private void btn_inPN_Click(object sender, EventArgs e)
+        {
+            TrangInPhieuNhap frm = new TrangInPhieuNhap();
+            frm._MaPN = mANHAPTextBox.Text;
+            frm.ShowDialog();
+        }
+
+        private void txt_GiaNhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

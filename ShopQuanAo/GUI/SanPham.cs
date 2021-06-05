@@ -49,9 +49,20 @@ namespace ShopQuanAo
             btn_HoanTac.Visible = false;
             btn_LuuDaTa.Visible = false;
             settext(false);
+            setdatagridview(sANPHAMDataGridView);
 
         }
-
+        public void setdatagridview(DataGridView dataGridView)
+        {
+            dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("tahoma", 10, FontStyle.Bold);
+            dataGridView.EnableHeadersVisualStyles = false;
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Crimson;
+            dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            for (int i = 0; i < dataGridView.ColumnCount; i++)
+            {
+                dataGridView.Columns[i].DefaultCellStyle.Font = new Font("tahoma", 10);
+            }
+        }
         private void mASPLabel_Click(object sender, EventArgs e)
         {
 
@@ -152,6 +163,8 @@ namespace ShopQuanAo
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
+            sANPHAMDataGridView.ClearSelection();
+            sANPHAMDataGridView.AllowUserToAddRows = true;
             settextnull();
             btn_CapNhat.Enabled = false;
             btn_Xoa.Enabled = false;
@@ -167,6 +180,7 @@ namespace ShopQuanAo
         {
             if (btn_Them.Enabled)
             {
+                sANPHAMDataGridView.AllowUserToAddRows = false;
                 settext(false);
                 btn_CapNhat.Enabled = true;
                 btn_Xoa.Enabled = true;
@@ -228,7 +242,7 @@ namespace ShopQuanAo
         private void btn_LuuDaTa_Click(object sender, EventArgs e)
         {
             if(chonanh)
-                pHinhAnh  = xl.LuuAnh( mASPTextBox.Text, openfile, ptb_hinhanhNV);
+                pHinhAnh  = xl.LuuAnh( mASPTextBox.Text, openfile, ptb_hinhanhNV.Image);
             
             if(btn_Them.Enabled)
             {
@@ -285,6 +299,27 @@ namespace ShopQuanAo
                 }
                 else
                     MessageBox.Show("Xóa Không Thành Công", "Xóa Sản Phẩm", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dONGIATextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar)&&!char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }    
+        }
+
+        private void sOLUONGTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -22,6 +22,8 @@ namespace ShopQuanAo.GUI
         private void TranginHoaDon_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dataSet1.Hoadon_view' table. You can move, or remove it, as needed.
+            this.hoadon_viewTableAdapter.Fill(this.dataSet1.Hoadon_view);
+            // TODO: This line of code loads data into the 'dataSet1.Hoadon_view' table. You can move, or remove it, as needed.
             this.hoadon_viewTableAdapter.FillTHeoMa(this.dataSet1.Hoadon_view,_mahd);
             
             this.reportViewer1.RefreshReport();

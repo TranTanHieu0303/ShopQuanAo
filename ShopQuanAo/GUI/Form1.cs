@@ -14,6 +14,7 @@ namespace ShopQuanAo
 {
     public partial class Form1 : Form
     {
+        public Form _frm;
         XuLy XL = new XuLy();
         public NHANVIEN _nv;
         public Form1()
@@ -142,7 +143,8 @@ namespace ShopQuanAo
             DialogResult r = MessageBox.Show("Bạn có muốn đăng xuất?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (r == DialogResult.Yes)
             {
-                this.Close();
+                this._frm.Show();
+                this.Hide();
             }
             else
             {

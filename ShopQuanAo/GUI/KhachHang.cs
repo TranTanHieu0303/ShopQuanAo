@@ -35,6 +35,18 @@ namespace ShopQuanAo
             btn_LuuDaTa.Visible = false;
             btn_HoanTac.Visible = false;
             settext(false);
+            setdatagridview(kHACHHANGDataGridView);
+        }
+        public void setdatagridview(DataGridView dataGridView)
+        {
+            dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("tahoma", 10, FontStyle.Bold);
+            dataGridView.EnableHeadersVisualStyles = false;
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Crimson;
+            dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            for (int i = 0; i < dataGridView.ColumnCount; i++)
+            {
+                dataGridView.Columns[i].DefaultCellStyle.Font = new Font("tahoma", 10);
+            }
         }
         public void settext(bool set)
         {
@@ -176,6 +188,14 @@ namespace ShopQuanAo
                     MessageBox.Show("Thất Bại", "Xóa Tài Khoản", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 this.kHACHHANGTableAdapter.Fill(this.dataSet1.KHACHHANG);
             }    
+        }
+
+        private void sDTTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -39,13 +39,14 @@ namespace ShopQuanAo
             System.Windows.Forms.Label gIAMGIALabel;
             System.Windows.Forms.Label tONGTIENLabel;
             System.Windows.Forms.Label dIACHILabel;
-            System.Windows.Forms.Label tRANGTHAILabel;
             System.Windows.Forms.Label mAHDLabel1;
             System.Windows.Forms.Label mASPLabel;
             System.Windows.Forms.Label sOLUONGLabel;
             System.Windows.Forms.Label dONGIALabel;
             System.Windows.Forms.Label gIAMGIALabel1;
             System.Windows.Forms.Label tHANHTIENLabel;
+            System.Windows.Forms.Label tRANGTHAILabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoaDon));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -64,7 +65,6 @@ namespace ShopQuanAo
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_thanhtoan = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.flowLP_hoadon = new System.Windows.Forms.FlowLayoutPanel();
             this.txt_tongtien = new System.Windows.Forms.TextBox();
@@ -86,30 +86,20 @@ namespace ShopQuanAo
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.tENSPTextBox = new System.Windows.Forms.TextBox();
-            this.sANPHAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new ShopQuanAo.DAL.DataSet1();
             this.mAHDTextBox1 = new System.Windows.Forms.TextBox();
-            this.cT_HOADONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sOLUONGTextBox = new System.Windows.Forms.TextBox();
             this.dONGIATextBox = new System.Windows.Forms.TextBox();
             this.gIAMGIATextBox1 = new System.Windows.Forms.TextBox();
             this.tHANHTIENTextBox = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tENNVTextBox = new System.Windows.Forms.TextBox();
-            this.nHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tENKHTextBox = new System.Windows.Forms.TextBox();
-            this.kHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btn_GiaoHang = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_inhoadon = new System.Windows.Forms.Button();
             this.mAHDTextBox = new System.Windows.Forms.TextBox();
-            this.hOADONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nGAYBDDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.nGAYKTDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.gIAMGIATextBox = new System.Windows.Forms.TextBox();
             this.tONGTIENTextBox = new System.Windows.Forms.TextBox();
             this.dIACHITextBox = new System.Windows.Forms.TextBox();
-            this.tRANGTHAITextBox = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btn_Loc = new System.Windows.Forms.Button();
             this.dtp_ngay = new System.Windows.Forms.DateTimePicker();
@@ -121,13 +111,21 @@ namespace ShopQuanAo
             this.txt_timkiemHD = new System.Windows.Forms.TextBox();
             this.cbb_timkiem = new System.Windows.Forms.ComboBox();
             this.cT_HOADONDataGridView = new System.Windows.Forms.DataGridView();
+            this.hOADONDataGridView = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tRANGTHAIComboBox = new System.Windows.Forms.ComboBox();
+            this.sANPHAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new ShopQuanAo.DAL.DataSet1();
+            this.cT_HOADONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hOADONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hOADONDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,6 +141,12 @@ namespace ShopQuanAo
             this.kHACHHANGTableAdapter = new ShopQuanAo.DAL.DataSet1TableAdapters.KHACHHANGTableAdapter();
             this.nHANVIENTableAdapter = new ShopQuanAo.DAL.DataSet1TableAdapters.NHANVIENTableAdapter();
             this.sANPHAMTableAdapter = new ShopQuanAo.DAL.DataSet1TableAdapters.SANPHAMTableAdapter();
+            this.btn_thanhtoan = new System.Windows.Forms.Button();
+            this.btn_Xoa = new System.Windows.Forms.ToolStripButton();
+            this.btn_CapNhat = new System.Windows.Forms.ToolStripButton();
+            this.btn_HoanTac = new System.Windows.Forms.ToolStripButton();
+            this.btn_LuuDaTa = new System.Windows.Forms.ToolStripButton();
+            this.btn_inHoaDon = new System.Windows.Forms.ToolStripButton();
             mAHDLabel = new System.Windows.Forms.Label();
             mAKHLabel = new System.Windows.Forms.Label();
             mANVLabel = new System.Windows.Forms.Label();
@@ -151,13 +155,13 @@ namespace ShopQuanAo
             gIAMGIALabel = new System.Windows.Forms.Label();
             tONGTIENLabel = new System.Windows.Forms.Label();
             dIACHILabel = new System.Windows.Forms.Label();
-            tRANGTHAILabel = new System.Windows.Forms.Label();
             mAHDLabel1 = new System.Windows.Forms.Label();
             mASPLabel = new System.Windows.Forms.Label();
             sOLUONGLabel = new System.Windows.Forms.Label();
             dONGIALabel = new System.Windows.Forms.Label();
             gIAMGIALabel1 = new System.Windows.Forms.Label();
             tHANHTIENLabel = new System.Windows.Forms.Label();
+            tRANGTHAILabel1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -167,106 +171,98 @@ namespace ShopQuanAo
             this.tabPage2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sANPHAMBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cT_HOADONBindingSource)).BeginInit();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHACHHANGBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOADONBindingSource)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cT_HOADONDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOADONDataGridView)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sANPHAMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cT_HOADONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hOADONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHACHHANGBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mAHDLabel
             // 
             mAHDLabel.AutoSize = true;
-            mAHDLabel.Location = new System.Drawing.Point(8, 22);
+            mAHDLabel.Location = new System.Drawing.Point(8, 28);
             mAHDLabel.Name = "mAHDLabel";
-            mAHDLabel.Size = new System.Drawing.Size(44, 13);
+            mAHDLabel.Size = new System.Drawing.Size(59, 16);
             mAHDLabel.TabIndex = 0;
             mAHDLabel.Text = "Mã HD:";
             // 
             // mAKHLabel
             // 
             mAKHLabel.AutoSize = true;
-            mAKHLabel.Location = new System.Drawing.Point(8, 48);
+            mAKHLabel.Location = new System.Drawing.Point(8, 54);
             mAKHLabel.Name = "mAKHLabel";
-            mAKHLabel.Size = new System.Drawing.Size(47, 13);
+            mAKHLabel.Size = new System.Drawing.Size(63, 16);
             mAKHLabel.TabIndex = 2;
             mAKHLabel.Text = "Tên KH:";
             // 
             // mANVLabel
             // 
             mANVLabel.AutoSize = true;
-            mANVLabel.Location = new System.Drawing.Point(8, 74);
+            mANVLabel.Location = new System.Drawing.Point(8, 80);
             mANVLabel.Name = "mANVLabel";
-            mANVLabel.Size = new System.Drawing.Size(47, 13);
+            mANVLabel.Size = new System.Drawing.Size(64, 16);
             mANVLabel.TabIndex = 4;
             mANVLabel.Text = "Tên NV:";
             // 
             // nGAYBDLabel
             // 
             nGAYBDLabel.AutoSize = true;
-            nGAYBDLabel.Location = new System.Drawing.Point(8, 101);
+            nGAYBDLabel.Location = new System.Drawing.Point(8, 107);
             nGAYBDLabel.Name = "nGAYBDLabel";
-            nGAYBDLabel.Size = new System.Drawing.Size(53, 13);
+            nGAYBDLabel.Size = new System.Drawing.Size(74, 16);
             nGAYBDLabel.TabIndex = 6;
             nGAYBDLabel.Text = "Ngày BD:";
             // 
             // nGAYKTLabel
             // 
             nGAYKTLabel.AutoSize = true;
-            nGAYKTLabel.Location = new System.Drawing.Point(8, 127);
+            nGAYKTLabel.Location = new System.Drawing.Point(8, 133);
             nGAYKTLabel.Name = "nGAYKTLabel";
-            nGAYKTLabel.Size = new System.Drawing.Size(52, 13);
+            nGAYKTLabel.Size = new System.Drawing.Size(72, 16);
             nGAYKTLabel.TabIndex = 8;
             nGAYKTLabel.Text = "Ngày KT:";
             // 
             // gIAMGIALabel
             // 
             gIAMGIALabel.AutoSize = true;
-            gIAMGIALabel.Location = new System.Drawing.Point(282, 22);
+            gIAMGIALabel.Location = new System.Drawing.Point(282, 28);
             gIAMGIALabel.Name = "gIAMGIALabel";
-            gIAMGIALabel.Size = new System.Drawing.Size(53, 13);
+            gIAMGIALabel.Size = new System.Drawing.Size(76, 16);
             gIAMGIALabel.TabIndex = 10;
             gIAMGIALabel.Text = "Giảm Giá:";
             // 
             // tONGTIENLabel
             // 
             tONGTIENLabel.AutoSize = true;
-            tONGTIENLabel.Location = new System.Drawing.Point(282, 48);
+            tONGTIENLabel.Location = new System.Drawing.Point(282, 54);
             tONGTIENLabel.Name = "tONGTIENLabel";
-            tONGTIENLabel.Size = new System.Drawing.Size(59, 13);
+            tONGTIENLabel.Size = new System.Drawing.Size(83, 16);
             tONGTIENLabel.TabIndex = 12;
             tONGTIENLabel.Text = "Tổng Tiền:";
             // 
             // dIACHILabel
             // 
             dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(282, 74);
+            dIACHILabel.Location = new System.Drawing.Point(282, 80);
             dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(44, 13);
+            dIACHILabel.Size = new System.Drawing.Size(61, 16);
             dIACHILabel.TabIndex = 14;
             dIACHILabel.Text = "Địa Chỉ:";
-            // 
-            // tRANGTHAILabel
-            // 
-            tRANGTHAILabel.AutoSize = true;
-            tRANGTHAILabel.Location = new System.Drawing.Point(282, 100);
-            tRANGTHAILabel.Name = "tRANGTHAILabel";
-            tRANGTHAILabel.Size = new System.Drawing.Size(62, 13);
-            tRANGTHAILabel.TabIndex = 16;
-            tRANGTHAILabel.Text = "Trạng Thái:";
             // 
             // mAHDLabel1
             // 
             mAHDLabel1.AutoSize = true;
             mAHDLabel1.Location = new System.Drawing.Point(6, 22);
             mAHDLabel1.Name = "mAHDLabel1";
-            mAHDLabel1.Size = new System.Drawing.Size(44, 13);
+            mAHDLabel1.Size = new System.Drawing.Size(59, 16);
             mAHDLabel1.TabIndex = 0;
             mAHDLabel1.Text = "Mã HD:";
             // 
@@ -275,7 +271,7 @@ namespace ShopQuanAo
             mASPLabel.AutoSize = true;
             mASPLabel.Location = new System.Drawing.Point(6, 48);
             mASPLabel.Name = "mASPLabel";
-            mASPLabel.Size = new System.Drawing.Size(46, 13);
+            mASPLabel.Size = new System.Drawing.Size(63, 16);
             mASPLabel.TabIndex = 2;
             mASPLabel.Text = "Tên SP:";
             // 
@@ -284,7 +280,7 @@ namespace ShopQuanAo
             sOLUONGLabel.AutoSize = true;
             sOLUONGLabel.Location = new System.Drawing.Point(6, 74);
             sOLUONGLabel.Name = "sOLUONGLabel";
-            sOLUONGLabel.Size = new System.Drawing.Size(56, 13);
+            sOLUONGLabel.Size = new System.Drawing.Size(77, 16);
             sOLUONGLabel.TabIndex = 4;
             sOLUONGLabel.Text = "Số Lượng:";
             // 
@@ -293,7 +289,7 @@ namespace ShopQuanAo
             dONGIALabel.AutoSize = true;
             dONGIALabel.Location = new System.Drawing.Point(265, 22);
             dONGIALabel.Name = "dONGIALabel";
-            dONGIALabel.Size = new System.Drawing.Size(49, 13);
+            dONGIALabel.Size = new System.Drawing.Size(67, 16);
             dONGIALabel.TabIndex = 6;
             dONGIALabel.Text = "Đơn Giá:";
             // 
@@ -302,7 +298,7 @@ namespace ShopQuanAo
             gIAMGIALabel1.AutoSize = true;
             gIAMGIALabel1.Location = new System.Drawing.Point(265, 48);
             gIAMGIALabel1.Name = "gIAMGIALabel1";
-            gIAMGIALabel1.Size = new System.Drawing.Size(54, 13);
+            gIAMGIALabel1.Size = new System.Drawing.Size(76, 16);
             gIAMGIALabel1.TabIndex = 8;
             gIAMGIALabel1.Text = "GIảm Giá:";
             // 
@@ -311,7 +307,7 @@ namespace ShopQuanAo
             tHANHTIENLabel.AutoSize = true;
             tHANHTIENLabel.Location = new System.Drawing.Point(265, 74);
             tHANHTIENLabel.Name = "tHANHTIENLabel";
-            tHANHTIENLabel.Size = new System.Drawing.Size(65, 13);
+            tHANHTIENLabel.Size = new System.Drawing.Size(90, 16);
             tHANHTIENLabel.TabIndex = 10;
             tHANHTIENLabel.Text = "Thành Tiền:";
             // 
@@ -320,6 +316,7 @@ namespace ShopQuanAo
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -330,10 +327,10 @@ namespace ShopQuanAo
             // 
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1115, 631);
+            this.tabPage1.Size = new System.Drawing.Size(1115, 628);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Bán Hàng";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -353,6 +350,7 @@ namespace ShopQuanAo
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.flowLP_hoadon);
             this.groupBox2.Controls.Add(this.txt_tongtien);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox2.Location = new System.Drawing.Point(626, 42);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(456, 578);
@@ -362,18 +360,20 @@ namespace ShopQuanAo
             // 
             // lbl_tienchu
             // 
-            this.lbl_tienchu.Location = new System.Drawing.Point(96, 325);
+            this.lbl_tienchu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_tienchu.Location = new System.Drawing.Point(90, 325);
             this.lbl_tienchu.Name = "lbl_tienchu";
-            this.lbl_tienchu.Size = new System.Drawing.Size(354, 56);
+            this.lbl_tienchu.Size = new System.Drawing.Size(360, 56);
             this.lbl_tienchu.TabIndex = 14;
             this.lbl_tienchu.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(15, 325);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 13;
             this.label3.Text = "Bằng Chữ:";
             // 
@@ -386,9 +386,10 @@ namespace ShopQuanAo
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Location = new System.Drawing.Point(9, 384);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.groupBox3.Location = new System.Drawing.Point(3, 384);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(441, 148);
+            this.groupBox3.Size = new System.Drawing.Size(447, 129);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin khách hàng";
@@ -398,7 +399,7 @@ namespace ShopQuanAo
             this.rdb_Nu.AutoSize = true;
             this.rdb_Nu.Location = new System.Drawing.Point(264, 91);
             this.rdb_Nu.Name = "rdb_Nu";
-            this.rdb_Nu.Size = new System.Drawing.Size(39, 17);
+            this.rdb_Nu.Size = new System.Drawing.Size(45, 20);
             this.rdb_Nu.TabIndex = 6;
             this.rdb_Nu.TabStop = true;
             this.rdb_Nu.Text = "Nữ";
@@ -409,7 +410,7 @@ namespace ShopQuanAo
             this.rdb_nam.AutoSize = true;
             this.rdb_nam.Location = new System.Drawing.Point(87, 91);
             this.rdb_nam.Name = "rdb_nam";
-            this.rdb_nam.Size = new System.Drawing.Size(47, 17);
+            this.rdb_nam.Size = new System.Drawing.Size(58, 20);
             this.rdb_nam.TabIndex = 2;
             this.rdb_nam.TabStop = true;
             this.rdb_nam.Text = "Nam";
@@ -419,14 +420,14 @@ namespace ShopQuanAo
             // 
             this.txt_tenkh.Location = new System.Drawing.Point(87, 55);
             this.txt_tenkh.Name = "txt_tenkh";
-            this.txt_tenkh.Size = new System.Drawing.Size(348, 20);
+            this.txt_tenkh.Size = new System.Drawing.Size(348, 22);
             this.txt_tenkh.TabIndex = 1;
             // 
             // txt_sdt
             // 
             this.txt_sdt.Location = new System.Drawing.Point(87, 24);
             this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.Size = new System.Drawing.Size(348, 20);
+            this.txt_sdt.Size = new System.Drawing.Size(348, 22);
             this.txt_sdt.TabIndex = 0;
             this.txt_sdt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_sdt_KeyUp);
             // 
@@ -435,7 +436,7 @@ namespace ShopQuanAo
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(6, 93);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 13);
+            this.label13.Size = new System.Drawing.Size(68, 16);
             this.label13.TabIndex = 2;
             this.label13.Text = "Giới tính:";
             // 
@@ -444,7 +445,7 @@ namespace ShopQuanAo
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(6, 58);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(47, 13);
+            this.label12.Size = new System.Drawing.Size(63, 16);
             this.label12.TabIndex = 1;
             this.label12.Text = "Tên KH:";
             // 
@@ -453,77 +454,74 @@ namespace ShopQuanAo
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(6, 27);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(35, 13);
+            this.label11.Size = new System.Drawing.Size(47, 16);
             this.label11.TabIndex = 0;
             this.label11.Text = "SDT :";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label10.Location = new System.Drawing.Point(315, 22);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 13);
+            this.label10.Size = new System.Drawing.Size(86, 16);
             this.label10.TabIndex = 11;
             this.label10.Text = "Thành Tiền";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label9.Location = new System.Drawing.Point(227, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 13);
+            this.label9.Size = new System.Drawing.Size(63, 16);
             this.label9.TabIndex = 10;
             this.label9.Text = "Đơn Giá";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.Location = new System.Drawing.Point(184, 22);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(20, 13);
+            this.label8.Size = new System.Drawing.Size(26, 16);
             this.label8.TabIndex = 9;
             this.label8.Text = "SL";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(77, 22);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 13);
+            this.label7.Size = new System.Drawing.Size(109, 16);
             this.label7.TabIndex = 8;
             this.label7.Text = "Tên Sản Phẩm";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(6, 22);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.Size = new System.Drawing.Size(53, 16);
             this.label6.TabIndex = 7;
             this.label6.Text = "Mã SP";
-            // 
-            // btn_thanhtoan
-            // 
-            this.btn_thanhtoan.Location = new System.Drawing.Point(293, 538);
-            this.btn_thanhtoan.Name = "btn_thanhtoan";
-            this.btn_thanhtoan.Size = new System.Drawing.Size(157, 34);
-            this.btn_thanhtoan.TabIndex = 0;
-            this.btn_thanhtoan.Text = "Thanh Toán";
-            this.btn_thanhtoan.UseVisualStyleBackColor = true;
-            this.btn_thanhtoan.Click += new System.EventHandler(this.btn_thanhtoan_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(10, 300);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.Size = new System.Drawing.Size(87, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Tổng Tiền :";
             // 
             // flowLP_hoadon
             // 
             this.flowLP_hoadon.AutoScroll = true;
+            this.flowLP_hoadon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.flowLP_hoadon.Location = new System.Drawing.Point(6, 45);
             this.flowLP_hoadon.Name = "flowLP_hoadon";
             this.flowLP_hoadon.Size = new System.Drawing.Size(444, 246);
@@ -533,9 +531,10 @@ namespace ShopQuanAo
             // 
             this.txt_tongtien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_tongtien.Enabled = false;
-            this.txt_tongtien.Location = new System.Drawing.Point(293, 297);
+            this.txt_tongtien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_tongtien.Location = new System.Drawing.Point(287, 297);
             this.txt_tongtien.Name = "txt_tongtien";
-            this.txt_tongtien.Size = new System.Drawing.Size(157, 20);
+            this.txt_tongtien.Size = new System.Drawing.Size(163, 22);
             this.txt_tongtien.TabIndex = 1;
             this.txt_tongtien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -546,6 +545,7 @@ namespace ShopQuanAo
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txt_timkiem);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.Location = new System.Drawing.Point(14, 42);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(580, 578);
@@ -556,9 +556,10 @@ namespace ShopQuanAo
             // txt_sl
             // 
             this.txt_sl.Enabled = false;
-            this.txt_sl.Location = new System.Drawing.Point(445, 20);
+            this.txt_sl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_sl.Location = new System.Drawing.Point(518, 20);
             this.txt_sl.Name = "txt_sl";
-            this.txt_sl.Size = new System.Drawing.Size(43, 20);
+            this.txt_sl.Size = new System.Drawing.Size(43, 22);
             this.txt_sl.TabIndex = 4;
             this.txt_sl.Value = new decimal(new int[] {
             1,
@@ -571,6 +572,7 @@ namespace ShopQuanAo
             // flowLP_timkiemsp
             // 
             this.flowLP_timkiemsp.AutoScroll = true;
+            this.flowLP_timkiemsp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.flowLP_timkiemsp.Location = new System.Drawing.Point(9, 57);
             this.flowLP_timkiemsp.Name = "flowLP_timkiemsp";
             this.flowLP_timkiemsp.Size = new System.Drawing.Size(565, 515);
@@ -579,26 +581,29 @@ namespace ShopQuanAo
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(6, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(80, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tìm Kiếm :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(386, 22);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(439, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Số Lượng";
             // 
             // txt_timkiem
             // 
-            this.txt_timkiem.Location = new System.Drawing.Point(63, 19);
+            this.txt_timkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_timkiem.Location = new System.Drawing.Point(92, 19);
             this.txt_timkiem.Name = "txt_timkiem";
-            this.txt_timkiem.Size = new System.Drawing.Size(317, 20);
+            this.txt_timkiem.Size = new System.Drawing.Size(317, 22);
             this.txt_timkiem.TabIndex = 0;
             this.txt_timkiem.TextChanged += new System.EventHandler(this.txt_timkiem_TextChanged);
             this.txt_timkiem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_timkiem_KeyPress);
@@ -613,10 +618,10 @@ namespace ShopQuanAo
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Controls.Add(this.cT_HOADONDataGridView);
             this.tabPage2.Controls.Add(this.hOADONDataGridView);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1115, 631);
+            this.tabPage2.Size = new System.Drawing.Size(1115, 628);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Thống Kê";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -640,9 +645,9 @@ namespace ShopQuanAo
             // 
             // lbl_nhanviengioi
             // 
-            this.lbl_nhanviengioi.Location = new System.Drawing.Point(168, 102);
+            this.lbl_nhanviengioi.Location = new System.Drawing.Point(226, 102);
             this.lbl_nhanviengioi.Name = "lbl_nhanviengioi";
-            this.lbl_nhanviengioi.Size = new System.Drawing.Size(301, 13);
+            this.lbl_nhanviengioi.Size = new System.Drawing.Size(243, 13);
             this.lbl_nhanviengioi.TabIndex = 8;
             this.lbl_nhanviengioi.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -656,9 +661,9 @@ namespace ShopQuanAo
             // 
             // lbl_Spbanchay
             // 
-            this.lbl_Spbanchay.Location = new System.Drawing.Point(168, 51);
+            this.lbl_Spbanchay.Location = new System.Drawing.Point(206, 51);
             this.lbl_Spbanchay.Name = "lbl_Spbanchay";
-            this.lbl_Spbanchay.Size = new System.Drawing.Size(301, 13);
+            this.lbl_Spbanchay.Size = new System.Drawing.Size(263, 13);
             this.lbl_Spbanchay.TabIndex = 6;
             this.lbl_Spbanchay.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -675,7 +680,7 @@ namespace ShopQuanAo
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(6, 102);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(155, 13);
+            this.label18.Size = new System.Drawing.Size(214, 16);
             this.label18.TabIndex = 3;
             this.label18.Text = "Nhân viên bán được nhìu nhất:";
             // 
@@ -684,7 +689,7 @@ namespace ShopQuanAo
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(6, 78);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(120, 13);
+            this.label17.Size = new System.Drawing.Size(165, 16);
             this.label17.TabIndex = 2;
             this.label17.Text = "Khách mua nhiều nhất :";
             // 
@@ -693,7 +698,7 @@ namespace ShopQuanAo
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(6, 51);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(132, 13);
+            this.label16.Size = new System.Drawing.Size(185, 16);
             this.label16.TabIndex = 1;
             this.label16.Text = "Sản phẩm bán chạy nhất :";
             // 
@@ -702,7 +707,7 @@ namespace ShopQuanAo
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(6, 25);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(83, 13);
+            this.label15.Size = new System.Drawing.Size(115, 16);
             this.label15.TabIndex = 0;
             this.label15.Text = "Tổng doanh thu";
             // 
@@ -732,38 +737,23 @@ namespace ShopQuanAo
             this.tENSPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sANPHAMBindingSource, "TENSP", true));
             this.tENSPTextBox.Location = new System.Drawing.Point(85, 45);
             this.tENSPTextBox.Name = "tENSPTextBox";
-            this.tENSPTextBox.Size = new System.Drawing.Size(155, 20);
+            this.tENSPTextBox.Size = new System.Drawing.Size(155, 22);
             this.tENSPTextBox.TabIndex = 24;
-            // 
-            // sANPHAMBindingSource
-            // 
-            this.sANPHAMBindingSource.DataMember = "SANPHAM";
-            this.sANPHAMBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // mAHDTextBox1
             // 
             this.mAHDTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cT_HOADONBindingSource, "MAHD", true));
             this.mAHDTextBox1.Location = new System.Drawing.Point(85, 19);
             this.mAHDTextBox1.Name = "mAHDTextBox1";
-            this.mAHDTextBox1.Size = new System.Drawing.Size(155, 20);
+            this.mAHDTextBox1.Size = new System.Drawing.Size(155, 22);
             this.mAHDTextBox1.TabIndex = 1;
-            // 
-            // cT_HOADONBindingSource
-            // 
-            this.cT_HOADONBindingSource.DataMember = "CT_HOADON";
-            this.cT_HOADONBindingSource.DataSource = this.dataSet1;
             // 
             // sOLUONGTextBox
             // 
             this.sOLUONGTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cT_HOADONBindingSource, "SOLUONG", true));
             this.sOLUONGTextBox.Location = new System.Drawing.Point(85, 71);
             this.sOLUONGTextBox.Name = "sOLUONGTextBox";
-            this.sOLUONGTextBox.Size = new System.Drawing.Size(155, 20);
+            this.sOLUONGTextBox.Size = new System.Drawing.Size(155, 22);
             this.sOLUONGTextBox.TabIndex = 5;
             // 
             // dONGIATextBox
@@ -771,7 +761,7 @@ namespace ShopQuanAo
             this.dONGIATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cT_HOADONBindingSource, "DONGIA", true));
             this.dONGIATextBox.Location = new System.Drawing.Point(344, 19);
             this.dONGIATextBox.Name = "dONGIATextBox";
-            this.dONGIATextBox.Size = new System.Drawing.Size(151, 20);
+            this.dONGIATextBox.Size = new System.Drawing.Size(151, 22);
             this.dONGIATextBox.TabIndex = 7;
             // 
             // gIAMGIATextBox1
@@ -779,7 +769,7 @@ namespace ShopQuanAo
             this.gIAMGIATextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cT_HOADONBindingSource, "GIAMGIA", true));
             this.gIAMGIATextBox1.Location = new System.Drawing.Point(344, 45);
             this.gIAMGIATextBox1.Name = "gIAMGIATextBox1";
-            this.gIAMGIATextBox1.Size = new System.Drawing.Size(151, 20);
+            this.gIAMGIATextBox1.Size = new System.Drawing.Size(151, 22);
             this.gIAMGIATextBox1.TabIndex = 9;
             // 
             // tHANHTIENTextBox
@@ -787,16 +777,16 @@ namespace ShopQuanAo
             this.tHANHTIENTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cT_HOADONBindingSource, "THANHTIEN", true));
             this.tHANHTIENTextBox.Location = new System.Drawing.Point(344, 71);
             this.tHANHTIENTextBox.Name = "tHANHTIENTextBox";
-            this.tHANHTIENTextBox.Size = new System.Drawing.Size(151, 20);
+            this.tHANHTIENTextBox.Size = new System.Drawing.Size(151, 22);
             this.tHANHTIENTextBox.TabIndex = 11;
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(tRANGTHAILabel1);
+            this.groupBox6.Controls.Add(this.tRANGTHAIComboBox);
+            this.groupBox6.Controls.Add(this.toolStrip1);
             this.groupBox6.Controls.Add(this.tENNVTextBox);
             this.groupBox6.Controls.Add(this.tENKHTextBox);
-            this.groupBox6.Controls.Add(this.btn_GiaoHang);
-            this.groupBox6.Controls.Add(this.button2);
-            this.groupBox6.Controls.Add(this.btn_inhoadon);
             this.groupBox6.Controls.Add(mAHDLabel);
             this.groupBox6.Controls.Add(this.mAHDTextBox);
             this.groupBox6.Controls.Add(mAKHLabel);
@@ -811,11 +801,9 @@ namespace ShopQuanAo
             this.groupBox6.Controls.Add(this.tONGTIENTextBox);
             this.groupBox6.Controls.Add(dIACHILabel);
             this.groupBox6.Controls.Add(this.dIACHITextBox);
-            this.groupBox6.Controls.Add(tRANGTHAILabel);
-            this.groupBox6.Controls.Add(this.tRANGTHAITextBox);
             this.groupBox6.Location = new System.Drawing.Point(16, 72);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(571, 257);
+            this.groupBox6.Size = new System.Drawing.Size(567, 255);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Thông tin hóa đơn";
@@ -824,117 +812,66 @@ namespace ShopQuanAo
             // tENNVTextBox
             // 
             this.tENNVTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHANVIENBindingSource, "TENNV", true));
-            this.tENNVTextBox.Location = new System.Drawing.Point(75, 71);
+            this.tENNVTextBox.Location = new System.Drawing.Point(89, 77);
             this.tENNVTextBox.Name = "tENNVTextBox";
-            this.tENNVTextBox.Size = new System.Drawing.Size(200, 20);
+            this.tENNVTextBox.Size = new System.Drawing.Size(186, 22);
             this.tENNVTextBox.TabIndex = 23;
-            // 
-            // nHANVIENBindingSource
-            // 
-            this.nHANVIENBindingSource.DataMember = "NHANVIEN";
-            this.nHANVIENBindingSource.DataSource = this.dataSet1;
             // 
             // tENKHTextBox
             // 
             this.tENKHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "TENKH", true));
-            this.tENKHTextBox.Location = new System.Drawing.Point(75, 45);
+            this.tENKHTextBox.Location = new System.Drawing.Point(89, 51);
             this.tENKHTextBox.Name = "tENKHTextBox";
-            this.tENKHTextBox.Size = new System.Drawing.Size(200, 20);
+            this.tENKHTextBox.Size = new System.Drawing.Size(186, 22);
             this.tENKHTextBox.TabIndex = 22;
-            // 
-            // kHACHHANGBindingSource
-            // 
-            this.kHACHHANGBindingSource.DataMember = "KHACHHANG";
-            this.kHACHHANGBindingSource.DataSource = this.dataSet1;
-            // 
-            // btn_GiaoHang
-            // 
-            this.btn_GiaoHang.Location = new System.Drawing.Point(269, 214);
-            this.btn_GiaoHang.Name = "btn_GiaoHang";
-            this.btn_GiaoHang.Size = new System.Drawing.Size(75, 23);
-            this.btn_GiaoHang.TabIndex = 20;
-            this.btn_GiaoHang.Text = "Giao Hàng";
-            this.btn_GiaoHang.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(443, 214);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 23);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Xóa hóa đơn";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btn_inhoadon
-            // 
-            this.btn_inhoadon.Location = new System.Drawing.Point(75, 214);
-            this.btn_inhoadon.Name = "btn_inhoadon";
-            this.btn_inhoadon.Size = new System.Drawing.Size(75, 23);
-            this.btn_inhoadon.TabIndex = 18;
-            this.btn_inhoadon.Text = "In hóa đơn";
-            this.btn_inhoadon.UseVisualStyleBackColor = true;
-            this.btn_inhoadon.Click += new System.EventHandler(this.btn_inhoadon_Click);
             // 
             // mAHDTextBox
             // 
             this.mAHDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOADONBindingSource, "MAHD", true));
-            this.mAHDTextBox.Location = new System.Drawing.Point(75, 19);
+            this.mAHDTextBox.Location = new System.Drawing.Point(89, 25);
             this.mAHDTextBox.Name = "mAHDTextBox";
-            this.mAHDTextBox.Size = new System.Drawing.Size(200, 20);
+            this.mAHDTextBox.Size = new System.Drawing.Size(186, 22);
             this.mAHDTextBox.TabIndex = 1;
-            // 
-            // hOADONBindingSource
-            // 
-            this.hOADONBindingSource.DataMember = "HOADON";
-            this.hOADONBindingSource.DataSource = this.dataSet1;
             // 
             // nGAYBDDateTimePicker
             // 
             this.nGAYBDDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.hOADONBindingSource, "NGAYBD", true));
-            this.nGAYBDDateTimePicker.Location = new System.Drawing.Point(75, 97);
+            this.nGAYBDDateTimePicker.Location = new System.Drawing.Point(89, 103);
             this.nGAYBDDateTimePicker.Name = "nGAYBDDateTimePicker";
-            this.nGAYBDDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.nGAYBDDateTimePicker.Size = new System.Drawing.Size(186, 22);
             this.nGAYBDDateTimePicker.TabIndex = 7;
             // 
             // nGAYKTDateTimePicker
             // 
             this.nGAYKTDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.hOADONBindingSource, "NGAYKT", true));
-            this.nGAYKTDateTimePicker.Location = new System.Drawing.Point(75, 123);
+            this.nGAYKTDateTimePicker.Location = new System.Drawing.Point(89, 129);
             this.nGAYKTDateTimePicker.Name = "nGAYKTDateTimePicker";
-            this.nGAYKTDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.nGAYKTDateTimePicker.Size = new System.Drawing.Size(186, 22);
             this.nGAYKTDateTimePicker.TabIndex = 9;
             // 
             // gIAMGIATextBox
             // 
             this.gIAMGIATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOADONBindingSource, "GIAMGIA", true));
-            this.gIAMGIATextBox.Location = new System.Drawing.Point(361, 19);
+            this.gIAMGIATextBox.Location = new System.Drawing.Point(376, 25);
             this.gIAMGIATextBox.Name = "gIAMGIATextBox";
-            this.gIAMGIATextBox.Size = new System.Drawing.Size(200, 20);
+            this.gIAMGIATextBox.Size = new System.Drawing.Size(185, 22);
             this.gIAMGIATextBox.TabIndex = 11;
             // 
             // tONGTIENTextBox
             // 
             this.tONGTIENTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOADONBindingSource, "TONGTIEN", true));
-            this.tONGTIENTextBox.Location = new System.Drawing.Point(361, 45);
+            this.tONGTIENTextBox.Location = new System.Drawing.Point(376, 51);
             this.tONGTIENTextBox.Name = "tONGTIENTextBox";
-            this.tONGTIENTextBox.Size = new System.Drawing.Size(200, 20);
+            this.tONGTIENTextBox.Size = new System.Drawing.Size(185, 22);
             this.tONGTIENTextBox.TabIndex = 13;
             // 
             // dIACHITextBox
             // 
             this.dIACHITextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOADONBindingSource, "DIACHI", true));
-            this.dIACHITextBox.Location = new System.Drawing.Point(361, 71);
+            this.dIACHITextBox.Location = new System.Drawing.Point(376, 77);
             this.dIACHITextBox.Name = "dIACHITextBox";
-            this.dIACHITextBox.Size = new System.Drawing.Size(200, 20);
+            this.dIACHITextBox.Size = new System.Drawing.Size(185, 22);
             this.dIACHITextBox.TabIndex = 15;
-            // 
-            // tRANGTHAITextBox
-            // 
-            this.tRANGTHAITextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOADONBindingSource, "TRANGTHAI", true));
-            this.tRANGTHAITextBox.Location = new System.Drawing.Point(361, 97);
-            this.tRANGTHAITextBox.Name = "tRANGTHAITextBox";
-            this.tRANGTHAITextBox.Size = new System.Drawing.Size(200, 20);
-            this.tRANGTHAITextBox.TabIndex = 17;
             // 
             // groupBox5
             // 
@@ -964,7 +901,7 @@ namespace ShopQuanAo
             this.dtp_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_ngay.Location = new System.Drawing.Point(253, 18);
             this.dtp_ngay.Name = "dtp_ngay";
-            this.dtp_ngay.Size = new System.Drawing.Size(130, 20);
+            this.dtp_ngay.Size = new System.Drawing.Size(130, 22);
             this.dtp_ngay.TabIndex = 5;
             // 
             // label5
@@ -972,7 +909,7 @@ namespace ShopQuanAo
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(15, 24);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.Size = new System.Drawing.Size(75, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Lọc theo :";
             // 
@@ -987,7 +924,7 @@ namespace ShopQuanAo
             "Đơn Hàng Chờ Xử Lý"});
             this.cbb_Loc.Location = new System.Drawing.Point(113, 19);
             this.cbb_Loc.Name = "cbb_Loc";
-            this.cbb_Loc.Size = new System.Drawing.Size(121, 21);
+            this.cbb_Loc.Size = new System.Drawing.Size(121, 24);
             this.cbb_Loc.TabIndex = 1;
             this.cbb_Loc.SelectedIndexChanged += new System.EventHandler(this.cbb_Loc_SelectedIndexChanged);
             // 
@@ -1009,7 +946,7 @@ namespace ShopQuanAo
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(6, 24);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 13);
+            this.label14.Size = new System.Drawing.Size(113, 16);
             this.label14.TabIndex = 3;
             this.label14.Text = "Tìm kiếm theo :";
             this.label14.Click += new System.EventHandler(this.label14_Click);
@@ -1028,7 +965,7 @@ namespace ShopQuanAo
             // 
             this.txt_timkiemHD.Location = new System.Drawing.Point(253, 19);
             this.txt_timkiemHD.Name = "txt_timkiemHD";
-            this.txt_timkiemHD.Size = new System.Drawing.Size(208, 20);
+            this.txt_timkiemHD.Size = new System.Drawing.Size(208, 22);
             this.txt_timkiemHD.TabIndex = 1;
             // 
             // cbb_timkiem
@@ -1038,9 +975,9 @@ namespace ShopQuanAo
             this.cbb_timkiem.Items.AddRange(new object[] {
             "Mã Hóa Đơn",
             "Số Điện Thoại KH"});
-            this.cbb_timkiem.Location = new System.Drawing.Point(115, 19);
+            this.cbb_timkiem.Location = new System.Drawing.Point(126, 19);
             this.cbb_timkiem.Name = "cbb_timkiem";
-            this.cbb_timkiem.Size = new System.Drawing.Size(121, 21);
+            this.cbb_timkiem.Size = new System.Drawing.Size(121, 24);
             this.cbb_timkiem.TabIndex = 0;
             // 
             // cT_HOADONDataGridView
@@ -1062,6 +999,94 @@ namespace ShopQuanAo
             this.cT_HOADONDataGridView.Size = new System.Drawing.Size(508, 268);
             this.cT_HOADONDataGridView.TabIndex = 1;
             this.cT_HOADONDataGridView.SelectionChanged += new System.EventHandler(this.cT_HOADONDataGridView_SelectionChanged);
+            // 
+            // hOADONDataGridView
+            // 
+            this.hOADONDataGridView.AllowUserToAddRows = false;
+            this.hOADONDataGridView.AutoGenerateColumns = false;
+            this.hOADONDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.hOADONDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11});
+            this.hOADONDataGridView.DataSource = this.hOADONBindingSource;
+            this.hOADONDataGridView.Location = new System.Drawing.Point(16, 342);
+            this.hOADONDataGridView.Name = "hOADONDataGridView";
+            this.hOADONDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.hOADONDataGridView.Size = new System.Drawing.Size(571, 268);
+            this.hOADONDataGridView.TabIndex = 0;
+            this.hOADONDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.hOADONDataGridView_CellContentClick);
+            this.hOADONDataGridView.SelectionChanged += new System.EventHandler(this.hOADONDataGridView_SelectionChanged);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_Xoa,
+            this.btn_CapNhat,
+            this.btn_HoanTac,
+            this.btn_LuuDaTa,
+            this.btn_inHoaDon});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 209);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(561, 43);
+            this.toolStrip1.TabIndex = 25;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tRANGTHAILabel1
+            // 
+            tRANGTHAILabel1.AutoSize = true;
+            tRANGTHAILabel1.Location = new System.Drawing.Point(282, 110);
+            tRANGTHAILabel1.Name = "tRANGTHAILabel1";
+            tRANGTHAILabel1.Size = new System.Drawing.Size(88, 16);
+            tRANGTHAILabel1.TabIndex = 25;
+            tRANGTHAILabel1.Text = "Trạng Thái:";
+            // 
+            // tRANGTHAIComboBox
+            // 
+            this.tRANGTHAIComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOADONBindingSource, "TRANGTHAI", true));
+            this.tRANGTHAIComboBox.FormattingEnabled = true;
+            this.tRANGTHAIComboBox.Location = new System.Drawing.Point(376, 107);
+            this.tRANGTHAIComboBox.Name = "tRANGTHAIComboBox";
+            this.tRANGTHAIComboBox.Size = new System.Drawing.Size(185, 24);
+            this.tRANGTHAIComboBox.TabIndex = 26;
+            this.tRANGTHAIComboBox.DropDown += new System.EventHandler(this.tRANGTHAIComboBox_DropDown);
+            // 
+            // sANPHAMBindingSource
+            // 
+            this.sANPHAMBindingSource.DataMember = "SANPHAM";
+            this.sANPHAMBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cT_HOADONBindingSource
+            // 
+            this.cT_HOADONBindingSource.DataMember = "CT_HOADON";
+            this.cT_HOADONBindingSource.DataSource = this.dataSet1;
+            // 
+            // hOADONBindingSource
+            // 
+            this.hOADONBindingSource.DataMember = "HOADON";
+            this.hOADONBindingSource.DataSource = this.dataSet1;
+            // 
+            // nHANVIENBindingSource
+            // 
+            this.nHANVIENBindingSource.DataMember = "NHANVIEN";
+            this.nHANVIENBindingSource.DataSource = this.dataSet1;
+            // 
+            // kHACHHANGBindingSource
+            // 
+            this.kHACHHANGBindingSource.DataMember = "KHACHHANG";
+            this.kHACHHANGBindingSource.DataSource = this.dataSet1;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -1104,30 +1129,6 @@ namespace ShopQuanAo
             this.dataGridViewTextBoxColumn17.HeaderText = "Thành Tiền";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            // 
-            // hOADONDataGridView
-            // 
-            this.hOADONDataGridView.AllowUserToAddRows = false;
-            this.hOADONDataGridView.AutoGenerateColumns = false;
-            this.hOADONDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.hOADONDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
-            this.hOADONDataGridView.DataSource = this.hOADONBindingSource;
-            this.hOADONDataGridView.Location = new System.Drawing.Point(18, 342);
-            this.hOADONDataGridView.Name = "hOADONDataGridView";
-            this.hOADONDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.hOADONDataGridView.Size = new System.Drawing.Size(565, 268);
-            this.hOADONDataGridView.TabIndex = 0;
-            this.hOADONDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.hOADONDataGridView_CellContentClick);
-            this.hOADONDataGridView.SelectionChanged += new System.EventHandler(this.hOADONDataGridView_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1231,6 +1232,82 @@ namespace ShopQuanAo
             // 
             this.sANPHAMTableAdapter.ClearBeforeFill = true;
             // 
+            // btn_thanhtoan
+            // 
+            this.btn_thanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_thanhtoan.Image = global::ShopQuanAo.Properties.Resources.Pay_Per_Click_icon;
+            this.btn_thanhtoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_thanhtoan.Location = new System.Drawing.Point(287, 530);
+            this.btn_thanhtoan.Name = "btn_thanhtoan";
+            this.btn_thanhtoan.Size = new System.Drawing.Size(163, 42);
+            this.btn_thanhtoan.TabIndex = 0;
+            this.btn_thanhtoan.Text = "Thanh Toán";
+            this.btn_thanhtoan.UseVisualStyleBackColor = true;
+            this.btn_thanhtoan.Click += new System.EventHandler(this.btn_thanhtoan_Click);
+            // 
+            // btn_Xoa
+            // 
+            this.btn_Xoa.AutoSize = false;
+            this.btn_Xoa.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xoa.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.Image")));
+            this.btn_Xoa.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(100, 40);
+            this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.ToolTipText = "Xóa tài khoản";
+            // 
+            // btn_CapNhat
+            // 
+            this.btn_CapNhat.AutoSize = false;
+            this.btn_CapNhat.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CapNhat.Image = ((System.Drawing.Image)(resources.GetObject("btn_CapNhat.Image")));
+            this.btn_CapNhat.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_CapNhat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_CapNhat.Name = "btn_CapNhat";
+            this.btn_CapNhat.Size = new System.Drawing.Size(140, 40);
+            this.btn_CapNhat.Text = "Cập Nhật";
+            this.btn_CapNhat.ToolTipText = "Cập Nhật thông tin  tài khoản";
+            this.btn_CapNhat.Click += new System.EventHandler(this.btn_CapNhat_Click);
+            // 
+            // btn_HoanTac
+            // 
+            this.btn_HoanTac.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HoanTac.Image = global::ShopQuanAo.Properties.Resources.arrow_undo_icon;
+            this.btn_HoanTac.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_HoanTac.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_HoanTac.Name = "btn_HoanTac";
+            this.btn_HoanTac.Size = new System.Drawing.Size(134, 40);
+            this.btn_HoanTac.Text = "Hoàn Tác";
+            this.btn_HoanTac.ToolTipText = "Về Trạng Thái Cũ";
+            this.btn_HoanTac.Click += new System.EventHandler(this.btn_HoanTac_Click);
+            // 
+            // btn_LuuDaTa
+            // 
+            this.btn_LuuDaTa.AutoSize = false;
+            this.btn_LuuDaTa.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_LuuDaTa.Image = ((System.Drawing.Image)(resources.GetObject("btn_LuuDaTa.Image")));
+            this.btn_LuuDaTa.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_LuuDaTa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_LuuDaTa.Name = "btn_LuuDaTa";
+            this.btn_LuuDaTa.Size = new System.Drawing.Size(100, 40);
+            this.btn_LuuDaTa.Text = "Lưu";
+            this.btn_LuuDaTa.ToolTipText = "Lưu tất cả thông tin đã chỉnh sữa vào DataBase";
+            this.btn_LuuDaTa.Click += new System.EventHandler(this.btn_LuuDaTa_Click);
+            // 
+            // btn_inHoaDon
+            // 
+            this.btn_inHoaDon.AutoSize = false;
+            this.btn_inHoaDon.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inHoaDon.Image = global::ShopQuanAo.Properties.Resources.print_icon;
+            this.btn_inHoaDon.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_inHoaDon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_inHoaDon.Name = "btn_inHoaDon";
+            this.btn_inHoaDon.Size = new System.Drawing.Size(100, 40);
+            this.btn_inHoaDon.Text = "In";
+            this.btn_inHoaDon.ToolTipText = "In Bảng Lương Nhân Viên";
+            this.btn_inHoaDon.Click += new System.EventHandler(this.btn_inHoaDon_Click_1);
+            // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1256,20 +1333,22 @@ namespace ShopQuanAo
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sANPHAMBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cT_HOADONBindingSource)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHACHHANGBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOADONBindingSource)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cT_HOADONDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOADONDataGridView)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sANPHAMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cT_HOADONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hOADONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHACHHANGBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1346,7 +1425,6 @@ namespace ShopQuanAo
         private System.Windows.Forms.TextBox gIAMGIATextBox;
         private System.Windows.Forms.TextBox tONGTIENTextBox;
         private System.Windows.Forms.TextBox dIACHITextBox;
-        private System.Windows.Forms.TextBox tRANGTHAITextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
@@ -1362,9 +1440,6 @@ namespace ShopQuanAo
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btn_inhoadon;
-        private System.Windows.Forms.Button btn_GiaoHang;
         private System.Windows.Forms.BindingSource kHACHHANGBindingSource;
         private DAL.DataSet1TableAdapters.KHACHHANGTableAdapter kHACHHANGTableAdapter;
         private System.Windows.Forms.TextBox tENKHTextBox;
@@ -1374,5 +1449,12 @@ namespace ShopQuanAo
         private System.Windows.Forms.BindingSource sANPHAMBindingSource;
         private DAL.DataSet1TableAdapters.SANPHAMTableAdapter sANPHAMTableAdapter;
         private System.Windows.Forms.TextBox tENSPTextBox;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btn_Xoa;
+        private System.Windows.Forms.ToolStripButton btn_CapNhat;
+        private System.Windows.Forms.ToolStripButton btn_HoanTac;
+        private System.Windows.Forms.ToolStripButton btn_LuuDaTa;
+        private System.Windows.Forms.ToolStripButton btn_inHoaDon;
+        private System.Windows.Forms.ComboBox tRANGTHAIComboBox;
     }
 }

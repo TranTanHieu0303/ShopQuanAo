@@ -28,108 +28,168 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_Thoat = new System.Windows.Forms.Button();
-            this.btn_DN = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_DangNhap));
             this.cb_HienthiPass = new System.Windows.Forms.CheckBox();
             this.txt_Pass = new System.Windows.Forms.TextBox();
             this.txt_UseName = new System.Windows.Forms.TextBox();
-            this.lbl_Title = new System.Windows.Forms.Label();
-            this.lbl_Pass = new System.Windows.Forms.Label();
-            this.lbl_UseName = new System.Windows.Forms.Label();
+            this.btn_Thoat = new System.Windows.Forms.Button();
+            this.btn_DN = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_Thoat
-            // 
-            this.btn_Thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_Thoat.Location = new System.Drawing.Point(270, 178);
-            this.btn_Thoat.Name = "btn_Thoat";
-            this.btn_Thoat.Size = new System.Drawing.Size(91, 27);
-            this.btn_Thoat.TabIndex = 15;
-            this.btn_Thoat.Text = "Thoát";
-            this.btn_Thoat.UseVisualStyleBackColor = true;
-            // 
-            // btn_DN
-            // 
-            this.btn_DN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_DN.Location = new System.Drawing.Point(102, 178);
-            this.btn_DN.Name = "btn_DN";
-            this.btn_DN.Size = new System.Drawing.Size(91, 27);
-            this.btn_DN.TabIndex = 14;
-            this.btn_DN.Text = "Đăng Nhập";
-            this.btn_DN.UseVisualStyleBackColor = true;
-            this.btn_DN.Click += new System.EventHandler(this.btn_DN_Click);
             // 
             // cb_HienthiPass
             // 
             this.cb_HienthiPass.AutoSize = true;
-            this.cb_HienthiPass.Location = new System.Drawing.Point(149, 136);
+            this.cb_HienthiPass.ForeColor = System.Drawing.SystemColors.Window;
+            this.cb_HienthiPass.Location = new System.Drawing.Point(132, 129);
+            this.cb_HienthiPass.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cb_HienthiPass.Name = "cb_HienthiPass";
-            this.cb_HienthiPass.Size = new System.Drawing.Size(15, 14);
+            this.cb_HienthiPass.Size = new System.Drawing.Size(145, 19);
             this.cb_HienthiPass.TabIndex = 13;
+            this.cb_HienthiPass.Text = "Hiển Thị Mật Khẩu";
             this.cb_HienthiPass.UseVisualStyleBackColor = true;
             this.cb_HienthiPass.CheckedChanged += new System.EventHandler(this.cb_HienthiPass_CheckedChanged);
             // 
             // txt_Pass
             // 
-            this.txt_Pass.Location = new System.Drawing.Point(169, 134);
+            this.txt_Pass.Location = new System.Drawing.Point(132, 102);
+            this.txt_Pass.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_Pass.Name = "txt_Pass";
-            this.txt_Pass.Size = new System.Drawing.Size(176, 20);
+            this.txt_Pass.Size = new System.Drawing.Size(176, 21);
             this.txt_Pass.TabIndex = 12;
             this.txt_Pass.UseSystemPasswordChar = true;
             // 
             // txt_UseName
             // 
-            this.txt_UseName.Location = new System.Drawing.Point(169, 92);
+            this.txt_UseName.Location = new System.Drawing.Point(132, 67);
+            this.txt_UseName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txt_UseName.Name = "txt_UseName";
-            this.txt_UseName.Size = new System.Drawing.Size(176, 20);
+            this.txt_UseName.Size = new System.Drawing.Size(176, 21);
             this.txt_UseName.TabIndex = 11;
             // 
-            // lbl_Title
+            // btn_Thoat
             // 
-            this.lbl_Title.AutoSize = true;
-            this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_Title.Location = new System.Drawing.Point(97, 51);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(229, 25);
-            this.lbl_Title.TabIndex = 10;
-            this.lbl_Title.Text = "Thông tin đăng nhập";
+            this.btn_Thoat.BackColor = System.Drawing.SystemColors.Window;
+            this.btn_Thoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_Thoat.Image = global::ShopQuanAo.Properties.Resources.Logout_icon;
+            this.btn_Thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Thoat.Location = new System.Drawing.Point(209, 165);
+            this.btn_Thoat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_Thoat.Name = "btn_Thoat";
+            this.btn_Thoat.Size = new System.Drawing.Size(99, 46);
+            this.btn_Thoat.TabIndex = 15;
+            this.btn_Thoat.Text = "Thoát";
+            this.btn_Thoat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Thoat.UseVisualStyleBackColor = false;
+            this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
             // 
-            // lbl_Pass
+            // btn_DN
             // 
-            this.lbl_Pass.AutoSize = true;
-            this.lbl_Pass.Location = new System.Drawing.Point(87, 137);
-            this.lbl_Pass.Name = "lbl_Pass";
-            this.lbl_Pass.Size = new System.Drawing.Size(56, 13);
-            this.lbl_Pass.TabIndex = 9;
-            this.lbl_Pass.Text = "PassWord";
+            this.btn_DN.BackColor = System.Drawing.SystemColors.Window;
+            this.btn_DN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_DN.Image = global::ShopQuanAo.Properties.Resources.Login_in_icon;
+            this.btn_DN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_DN.Location = new System.Drawing.Point(32, 165);
+            this.btn_DN.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btn_DN.Name = "btn_DN";
+            this.btn_DN.Size = new System.Drawing.Size(118, 46);
+            this.btn_DN.TabIndex = 14;
+            this.btn_DN.Text = "Đăng Nhập";
+            this.btn_DN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_DN.UseVisualStyleBackColor = false;
+            this.btn_DN.Click += new System.EventHandler(this.btn_DN_Click);
             // 
-            // lbl_UseName
+            // label1
             // 
-            this.lbl_UseName.AutoSize = true;
-            this.lbl_UseName.Location = new System.Drawing.Point(87, 95);
-            this.lbl_UseName.Name = "lbl_UseName";
-            this.lbl_UseName.Size = new System.Drawing.Size(57, 13);
-            this.lbl_UseName.TabIndex = 8;
-            this.lbl_UseName.Text = "Use Name";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(49, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(228, 26);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Thông tin đăng nhập";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(28, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 20);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "User name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(28, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 20);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Password";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btn_Thoat);
+            this.panel1.Controls.Add(this.cb_HienthiPass);
+            this.panel1.Controls.Add(this.txt_Pass);
+            this.panel1.Controls.Add(this.txt_UseName);
+            this.panel1.Controls.Add(this.btn_DN);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(113, 141);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(337, 232);
+            this.panel1.TabIndex = 22;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(140, 123);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
             // 
             // frm_DangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 261);
-            this.Controls.Add(this.btn_Thoat);
-            this.Controls.Add(this.btn_DN);
-            this.Controls.Add(this.cb_HienthiPass);
-            this.Controls.Add(this.txt_Pass);
-            this.Controls.Add(this.txt_UseName);
-            this.Controls.Add(this.lbl_Title);
-            this.Controls.Add(this.lbl_Pass);
-            this.Controls.Add(this.lbl_UseName);
+            this.BackgroundImage = global::ShopQuanAo.Properties.Resources.DTLYD_Various_Uses_of_Industrial_Hemps_That_Helps_In_Styling_Your_Look;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(504, 402);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox2);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frm_DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
+            this.Load += new System.EventHandler(this.frm_DangNhap_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -140,8 +200,10 @@
         private System.Windows.Forms.CheckBox cb_HienthiPass;
         private System.Windows.Forms.TextBox txt_Pass;
         private System.Windows.Forms.TextBox txt_UseName;
-        private System.Windows.Forms.Label lbl_Title;
-        private System.Windows.Forms.Label lbl_Pass;
-        private System.Windows.Forms.Label lbl_UseName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Drawing;
 using ShopQuanAo.DAL;
 using ShopQuanAo.BLL;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace ShopQuanAo
     {
         QLShopDataContext data = new QLShopDataContext(ShopQuanAo.Properties.Settings.Default.connectionString);
         //SqlConnection cnn = new SqlConnection(ShopQuanAo.Properties.Settings.Default.connectionString);
+        //Ket noi du lieu
         public bool ketnoiBD(string connec)
         {
             try
@@ -27,8 +29,13 @@ namespace ShopQuanAo
                 Properties.Settings.Default.Save();
                 return true;
             }
-            catch { return false; };
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                return false;
+            };
         }
+        //Dang nhap
         public NHANVIEN DangNhap(string _UseName, string _Pass)
         {
             NHANVIEN nv = data.NHANVIENs.FirstOrDefault(n => n.USERNAME == _UseName && n.PASS == _Pass);
@@ -51,6 +58,13 @@ namespace ShopQuanAo
                     //data.SubmitChanges();
             
         }
+        public bool ktVanTayToTai(string _maNV)
+        {
+            VANTAY vt = data.VANTAYs.FirstOrDefault(v => v.MANV == _maNV);
+            if (vt != null)
+                return true;
+            return false;
+        }
         public bool ChamCong(string _Manv, DateTime _ngaylam)
         {
             try
@@ -62,7 +76,11 @@ namespace ShopQuanAo
                 data.SubmitChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                return false;
+            }
 
         }
         public CHUCVU Chucvu(string _MACV)
@@ -176,7 +194,11 @@ namespace ShopQuanAo
                 data.SubmitChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                return false; 
+            }
         }
         //cap nhat san pham
         public bool CapNhatSP(string _mASP, string _TenSP, string _hinhAnh, string _mOTA, string _donGia, string _TrangThai, string _SoLuong, string _MaLoai)
@@ -194,27 +216,48 @@ namespace ShopQuanAo
                 data.SubmitChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                return false;
+            }
         }
-       //xoa san pham
+        //Cat nhatso luong san pham
+        public bool CapNhatSLSP(string _mASP, int _SoLuong)
+        {
+            try
+            {
+                SANPHAM sp = data.SANPHAMs.FirstOrDefault(s => s.MASP == _mASP);            
+                sp.SOLUONG -= _SoLuong;     
+                data.SubmitChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        //xoa san pham
         public bool XoaSP(string _mASP)
         {
             try
             {
                 SANPHAM sp = data.SANPHAMs.FirstOrDefault(s => s.MASP == _mASP);
-                if (sp != null)
-                {
-                    data.SANPHAMs.DeleteOnSubmit(sp);
-                    data.SubmitChanges();
-                    return true;
-                }
-                else
-                    return false;
+
+                data.SANPHAMs.DeleteOnSubmit(sp);
+                data.SubmitChanges();
+                return true;
+                
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                return false;
+            }
         }
        //lu hinh anh vao project
-        public string LuuAnh( string pmasp, OpenFileDialog openFileDialog1,PictureBox ptx_HinhAnh)
+        public string LuuAnh( string pma, OpenFileDialog openFileDialog1,Image ptx_HinhAnh)
         {
             string pHinhAnh;
             try
@@ -223,33 +266,33 @@ namespace ShopQuanAo
                 pHinhAnh = Path.GetFileName((openFileDialog1.FileName)).Trim();
                 int d = pHinhAnh.Length;
                 string duoi = pHinhAnh.Substring(d - 4);
-                pHinhAnh = "H" + pmasp + duoi;
+                pHinhAnh = "H" + pma + duoi;
                 int i = 0;
                 while (System.IO.File.Exists(Application.StartupPath + "\\Resources\\" + pHinhAnh))
                 {
-                    pHinhAnh = "H" + pmasp + "_" + i + duoi;
+                    pHinhAnh = "H" + pma + "_" + i + duoi;
                     i++;
                 };
                 switch (openFileDialog1.FilterIndex)
                 {
                     case 1:
                         {
-                            ptx_HinhAnh.Image.Save(Application.StartupPath + "\\Resources\\" + pHinhAnh, ImageFormat.Jpeg);
+                            ptx_HinhAnh.Save(Application.StartupPath + "\\Resources\\" + pHinhAnh, ImageFormat.Jpeg);
                         }
                         break;
                     case 2:
                         {
-                            ptx_HinhAnh.Image.Save(Application.StartupPath + "\\Resources\\" + pHinhAnh, ImageFormat.Bmp);
+                            ptx_HinhAnh.Save(Application.StartupPath + "\\Resources\\" + pHinhAnh, ImageFormat.Bmp);
                         }
                         break;
                     case 3:
                         {
-                            ptx_HinhAnh.Image.Save(Application.StartupPath + "\\Resources\\" + pHinhAnh, ImageFormat.Gif);
+                            ptx_HinhAnh.Save(Application.StartupPath + "\\Resources\\" + pHinhAnh, ImageFormat.Gif);
                         }
                         break;
                     case 4:
                         {
-                            ptx_HinhAnh.Image.Save(Application.StartupPath + "\\Resources\\" + pHinhAnh, ImageFormat.Png);
+                            ptx_HinhAnh.Save(Application.StartupPath + "\\Resources\\" + pHinhAnh, ImageFormat.Png);
                         }
                         break;
                     default:
@@ -298,11 +341,12 @@ namespace ShopQuanAo
             return "NV" + (Ma + 1);
         }
         //Them nhan vien moi
-        public bool ThemNV(string _mANV, string _TenNV, string _hinhAnh, string _SDT, string _Gioitinh, string _useName, string _pass, string _MaCV)
+        public bool ThemNV(string _mANV, string _TenNV, string _hinhAnh, string _SDT, string _Gioitinh, string _useName, string _pass, string _MaCV,int _luongNgay)
         {
             try
             {
                 NHANVIEN nv = new NHANVIEN();
+                BANGCHAMCONG bcc = new BANGCHAMCONG();
                 nv.MANV = _mANV;
                 nv.TENNV = _TenNV;
                 nv.HINHANH = _hinhAnh;
@@ -311,18 +355,28 @@ namespace ShopQuanAo
                 nv.USERNAME = _useName;
                 nv.PASS = _pass;
                 nv.CHUCVU = _MaCV;
+                bcc.MANV = _mANV;
+                bcc.SOCONG = 0;
+                bcc.DONLUONG = _luongNgay;
+                bcc.TONGLUONG = bcc.SOCONG * bcc.DONLUONG;
                 data.NHANVIENs.InsertOnSubmit(nv);
+                data.BANGCHAMCONGs.InsertOnSubmit(bcc);
                 data.SubmitChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                return false; 
+            }
         }
         //Cap nhat thoong tin nhan vien
-        public bool CapNhatNV(string _mANV, string _TenNV, string _hinhAnh, string _SDT, string _Gioitinh, string _useName, string _pass, string _MaCV)
+        public bool CapNhatNV(string _mANV, string _TenNV, string _hinhAnh, string _SDT, string _Gioitinh, string _useName, string _pass, string _MaCV, int _luongNgay)
         {
             try
             {
                 NHANVIEN nv = data.NHANVIENs.FirstOrDefault(n=>n.MANV==_mANV);
+                BANGCHAMCONG bcc = data.BANGCHAMCONGs.FirstOrDefault(b => b.MANV == _mANV);
                 nv.TENNV = _TenNV;
                 nv.HINHANH = _hinhAnh;
                 nv.SDT = _SDT;
@@ -330,27 +384,115 @@ namespace ShopQuanAo
                 nv.USERNAME = _useName;
                 nv.PASS = _pass;
                 nv.CHUCVU = _MaCV;
+                bcc.DONLUONG = _luongNgay;
+                bcc.TONGLUONG = bcc.SOCONG * bcc.DONLUONG;
                 data.SubmitChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                return false; 
+            }
         }
         public bool XoaNV(string _mANV)
         {
             try
             {
+                BANGCHAMCONG bcc = data.BANGCHAMCONGs.FirstOrDefault(b => b.MANV == _mANV);
                 NHANVIEN nv = data.NHANVIENs.FirstOrDefault(n => n.MANV == _mANV);
+                data.BANGCHAMCONGs.DeleteOnSubmit(bcc);
                 data.NHANVIENs.DeleteOnSubmit(nv);
                 data.SubmitChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error) ; 
+                return false; 
+            }
+        }
+        public string Them_Ma_VT()
+        {
+            List<VANTAY> lst = data.VANTAYs.OrderByDescending(s => s.MAVANTAY).ToList();
+            int Ma;
+            if (lst.Count != 0)
+                Ma = int.Parse(lst[0].MANV.Remove(0, 2));
+            else
+                Ma = 0;
+            if (Ma + 1 < 10)
+                return "VT00" + (Ma + 1);
+            if (Ma + 1 < 100)
+                return "VT0" + (Ma + 1);
+            return "VT" + (Ma + 1);
+        }
+        public bool themVanTay(string _maNV,string _hinh)
+        {
+            try
+            {
+                VANTAY vt = new VANTAY();
+                vt.MAVANTAY = Them_Ma_VT();
+                vt.MANV = _maNV;
+                vt.VANTAY1 = _hinh;
+                data.VANTAYs.InsertOnSubmit(vt);
+                data.SubmitChanges();
+                return true;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message.Trim());
+                return false;
+            }
+            
+        }
+        public bool capnhatVanTay(string _maNV, string _hinh)
+        {
+            try
+            {
+                VANTAY vt = data.VANTAYs.FirstOrDefault(v => v.MANV == _maNV);
+                vt.VANTAY1 = _hinh;
+                data.SubmitChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim());
+                return false;
+            }
+
+        }
+        //Trả Lương
+        public bool Thanh_Toan_Luong(string _maNV)
+        {
+            try
+            {
+                List<CT_NGAYLAM> ct = data.CT_NGAYLAMs.Where(c => c.MANV == _maNV).ToList();
+                BANGCHAMCONG b = data.BANGCHAMCONGs.FirstOrDefault(bcc => bcc.MANV == _maNV);
+                b.SOCONG = 0;
+                b.TONGLUONG = b.SOCONG * b.DONLUONG;
+                data.CT_NGAYLAMs.DeleteAllOnSubmit(ct);
+                data.SubmitChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim());
+                return false;
+            }
         }
         public List<SANPHAM> dsSanPham_timkiem(string _tukhoa)
         {
             if (_tukhoa != "")
                 return data.SANPHAMs.Where(sp => sp.MASP.Contains(_tukhoa) || sp.TENSP.Contains(_tukhoa)).ToList();
             return data.SANPHAMs.Where(sp => sp.MASP == _tukhoa).ToList();
+        }
+        //vaytay nhan vien
+        public bool vantay(string _maNV)
+        {
+            VANTAY vt = data.VANTAYs.FirstOrDefault(v => v.MANV == _maNV);
+            if (vt != null)
+                return false;
+            return true;
         }
         //KhachHang
         //tao ma khach hang moi 
@@ -384,7 +526,11 @@ namespace ShopQuanAo
                 data.SubmitChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                return false; 
+            }
         }
         public KHACHHANG timkhachhang(string _sdt)
         {
@@ -433,24 +579,35 @@ namespace ShopQuanAo
                 data.SubmitChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                return false; 
+            }
         }
-        public bool catnhatHD(string _maHD, string _maKH, string _maNV, DateTime _ngayBD, DateTime _ngayKT, string _giamgia, int _tongtien, string _trangthai, string _diachi, List<itemdonhang> _lst)
+        public bool catnhatHD(string _maHD, string _trangthai)
         {
             try
             {
                 HOADON hd = data.HOADONs.FirstOrDefault(h => h.MAHD == _maHD);
-                hd.MANV = _maNV;
-                hd.NGAYBD = _ngayBD;
-                hd.NGAYKT = _ngayKT;
-                hd.GIAMGIA = _giamgia;
-                hd.TONGTIEN = _tongtien;
+                if (_trangthai == "Đã Giao")
+                {
+                    hd.NGAYKT = DateTime.Now;
+                    List<CT_HOADON> ct = data.CT_HOADONs.Where(c => c.MAHD == _maHD).ToList();
+                    foreach(CT_HOADON item in ct)
+                    {
+                        CapNhatSLSP(item.MASP, item.SOLUONG);
+                    }    
+                }
                 hd.TRANGTHAI = _trangthai;
-                hd.DIACHI = _diachi;
                 data.SubmitChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                return false; 
+            }
         }
         //Lay Hoadoon theo ma
         public List<DAL.Hoadon_view> hoadontheoma(string ma)
@@ -640,7 +797,12 @@ namespace ShopQuanAo
                 data.KHACHHANGs.InsertOnSubmit(kh);
                 data.SubmitChanges();
                 return true;
-            }catch { return false; }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
         //Cat nhat thong tin Khach hang
         public bool CapNhatKH(string _maKH, string _tenKH, string _SDt, string _diaChi, string _gioitinh, string _Pass)
@@ -660,7 +822,11 @@ namespace ShopQuanAo
                 }
                 return false;
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
         //Xoa KHACH HANG
         public bool XoaKh(string _maKH)
@@ -676,7 +842,11 @@ namespace ShopQuanAo
                 }
                 return false;
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
         // PHIeu Nhap
         //Tao ma phieu nhap
@@ -716,7 +886,11 @@ namespace ShopQuanAo
                 data.SubmitChanges();
                 return true;
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message.Trim(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
         //Tim Phieu Nhaapj
        

@@ -19,8 +19,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.34078cm</Top>
-        <Left>6.1087cm</Left>
+        <Top>0.63899cm</Top>
+        <Left>6.35676cm</Left>
         <Height>0.57354cm</Height>
         <Width>3.98167cm</Width>
         <Style>
@@ -50,8 +50,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>1.05543cm</Top>
-        <Left>4.04496cm</Left>
+        <Top>1.35364cm</Top>
+        <Left>4.29302cm</Left>
         <Height>0.6cm</Height>
         <Width>8.45312cm</Width>
         <ZIndex>1</ZIndex>
@@ -72,7 +72,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>PHIẾU TÍNH TIỀN</Value>
+                <Value>PHIẾU NHẬP HÀNG</Value>
                 <Style>
                   <FontSize>16pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -85,8 +85,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>2.00766cm</Top>
-        <Left>5.4737cm</Left>
+        <Top>2.30588cm</Top>
+        <Left>5.72176cm</Left>
         <Height>0.70583cm</Height>
         <Width>5.41042cm</Width>
         <ZIndex>2</ZIndex>
@@ -100,109 +100,7 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="MAHD">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Mã Hóa Đơn:</Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=First(Fields!MAHD.Value, "DataSet1")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>MAHD</rd:DefaultName>
-        <Top>2.88988cm</Top>
-        <Left>3.54224cm</Left>
-        <Height>0.6cm</Height>
-        <Width>5.25167cm</Width>
-        <ZIndex>3</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="TENKH">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Khách Hàng :</Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=First(Fields!TENKH.Value, "DataSet1")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>TENKH</rd:DefaultName>
-        <Top>3.80683cm</Top>
-        <Left>3.54224cm</Left>
-        <Height>0.6cm</Height>
-        <Width>5.25167cm</Width>
-        <ZIndex>4</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="NGAYBD">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Ngày Lập :</Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=First(Fields!NGAYBD.Value, "DataSet1")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>NGAYBD</rd:DefaultName>
-        <Top>2.88988cm</Top>
-        <Left>10.10391cm</Left>
-        <Height>0.6cm</Height>
-        <Width>4.32563cm</Width>
-        <ZIndex>5</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Tablix Name="Tablix5">
+      <Tablix Name="Tablix2">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
@@ -224,7 +122,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox32">
+                    <Textbox Name="Textbox14">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -238,7 +136,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox32</rd:DefaultName>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -254,7 +152,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox34">
+                    <Textbox Name="Textbox16">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -268,7 +166,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox34</rd:DefaultName>
+                      <rd:DefaultName>Textbox16</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -284,21 +182,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox36">
+                    <Textbox Name="Textbox18">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Giá Bán</Value>
+                              <Value>Giá Nhập</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox36</rd:DefaultName>
+                      <rd:DefaultName>Textbox18</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -314,7 +212,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox38">
+                    <Textbox Name="Textbox20">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -328,7 +226,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox38</rd:DefaultName>
+                      <rd:DefaultName>Textbox20</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -490,19 +388,115 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>5.68537cm</Top>
-        <Left>3.6487cm</Left>
+        <Top>5.89648cm</Top>
+        <Left>3.22176cm</Left>
         <Height>1.2cm</Height>
         <Width>10cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="Textbox22">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Ký Xác Nhận</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox22</rd:DefaultName>
+        <Top>7.27287cm</Top>
+        <Left>11.85016cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="MANHAP">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Mã Phiếu : </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!MANHAP.Value, "DataSet1")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>MANHAP</rd:DefaultName>
+        <Top>3.46287cm</Top>
+        <Left>3.5687cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.96604cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NGAYNHAP">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Ngày Nhập :</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!NGAYNHAP.Value, "DataSet1")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NGAYNHAP</rd:DefaultName>
+        <Top>4.38891cm</Top>
+        <Left>3.5687cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.96604cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
-            <Color>White</Color>
             <Style>None</Style>
           </Border>
-          <Color>White</Color>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
-      </Tablix>
+      </Textbox>
       <Textbox Name="TONGTIEN">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -510,11 +504,15 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Tổng tiền :</Value>
+                <Value>Tổng Tiền </Value>
                 <Style />
               </TextRun>
               <TextRun>
                 <Value>=Sum(Fields!TONGTIEN.Value, "DataSet1")</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value> VND</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -522,10 +520,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>TONGTIEN</rd:DefaultName>
-        <Top>7.45808cm</Top>
-        <Left>8.99203cm</Left>
+        <Top>5.12009cm</Top>
+        <Left>3.5687cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.98167cm</Width>
+        <Width>5.96604cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -537,42 +535,8 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="TENNV">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Nhân Viên :</Value>
-                <Style />
-              </TextRun>
-              <TextRun>
-                <Value>=First(Fields!TENNV.Value, "DataSet1")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>TENNV</rd:DefaultName>
-        <Top>4.58322cm</Top>
-        <Left>3.54224cm</Left>
-        <Height>0.6cm</Height>
-        <Width>5.25167cm</Width>
-        <ZIndex>8</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
     </ReportItems>
-    <Height>4.37039in</Height>
+    <Height>3.80208in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>
@@ -593,7 +557,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>b499c2ba-60a5-4f5c-bab8-6e002f37df29</rd:DataSourceID>
+      <rd:DataSourceID>bc601609-09ec-4f5b-bd2d-c6a8670cd1a1</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -611,53 +575,37 @@
           <DataField>DONGIA</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="GIAMGIA">
-          <DataField>GIAMGIA</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="THANHTIEN">
           <DataField>THANHTIEN</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="TENKH">
-          <DataField>TENKH</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TENNV">
-          <DataField>TENNV</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TENSP">
-          <DataField>TENSP</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NGAYBD">
-          <DataField>NGAYBD</DataField>
+        <Field Name="NGAYNHAP">
+          <DataField>NGAYNHAP</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="TONGTIEN">
           <DataField>TONGTIEN</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Expr1">
-          <DataField>Expr1</DataField>
+        <Field Name="TENSP">
+          <DataField>TENSP</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="MAHD">
-          <DataField>MAHD</DataField>
+        <Field Name="MANHAP">
+          <DataField>MANHAP</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
         <rd:SchemaPath>G:\download\KDPM+CNPM\KDPM+CNPM\ShopQuanAo\ShopQuanAo\DAL\DataSet1.xsd</rd:SchemaPath>
-        <rd:TableName>Hoadon_view</rd:TableName>
+        <rd:TableName>PhieuNhap_view</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>Hoadon_viewTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>PhieuNhap_viewTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>3b92c26a-8b0e-4fe9-8eba-2349cfbd4a3d</rd:ReportID>
+  <rd:ReportID>35f4fe26-3547-4925-83ca-8a55a32ecad1</rd:ReportID>
 </Report>

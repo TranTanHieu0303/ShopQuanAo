@@ -76,12 +76,6 @@
     <Compile Include="DAL\QLShop.cs">
       <DependentUpon>QLShop.dbml</DependentUpon>
     </Compile>
-    <Compile Include="GUI\CTHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\CTHoaDon.Designer.cs">
-      <DependentUpon>CTHoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="DAL\DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
@@ -107,6 +101,12 @@
     </Compile>
     <Compile Include="GUI\frm_DangNhap.Designer.cs">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frm_In_Luong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frm_In_Luong.Designer.cs">
+      <DependentUpon>frm_In_Luong.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frm_ketnoi.cs">
       <SubType>Form</SubType>
@@ -157,6 +157,12 @@
     <Compile Include="GUI\TranginHoaDon.Designer.cs">
       <DependentUpon>TranginHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\TrangInPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TrangInPhieuNhap.Designer.cs">
+      <DependentUpon>TrangInPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserControl_itemHoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,9 +196,6 @@
     <Compile Include="BLL\XLhinhanh.cs" />
     <Compile Include="BLL\XuLy.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="GUI\CTHoaDon.resx">
-      <DependentUpon>CTHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_DangNhap.resx">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frm_In_Luong.resx">
+      <DependentUpon>frm_In_Luong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frm_ketnoi.resx">
       <DependentUpon>frm_ketnoi.cs</DependentUpon>
@@ -220,10 +226,15 @@
     <EmbeddedResource Include="GUI\NhapHang.resx">
       <DependentUpon>NhapHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\PhieuNhap.rdlc" />
     <EmbeddedResource Include="GUI\Report1.rdlc" />
     <EmbeddedResource Include="GUI\TranginHoaDon.resx">
       <DependentUpon>TranginHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TrangInPhieuNhap.resx">
+      <DependentUpon>TrangInPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TrangIn_Luong.rdlc" />
     <EmbeddedResource Include="GUI\UserControl_itemHoaDon.resx">
       <DependentUpon>UserControl_itemHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +307,16 @@
     <None Include="Resources\close-icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\Resources\logo.jpg" />
+    <None Include="Resources\icon_vantay.png" />
+    <None Include="Resources\print-icon.png" />
+    <None Include="Resources\payment-icon.png" />
+    <None Include="Resources\Pay-Per-Click-icon.png" />
+    <None Include="Resources\Shop-Clothes-icon.png" />
+    <None Include="Resources\Shop-Clothes-icon %281%29.png" />
+    <None Include="Resources\Login-in-icon.png" />
+    <None Include="Resources\Logout-icon.png" />
+    <None Include="Resources\DTLYD-Various-Uses-of-Industrial-Hemps-That-Helps-In-Styling-Your-Look.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

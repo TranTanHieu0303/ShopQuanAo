@@ -44,16 +44,11 @@
             this.lbl_ma = new System.Windows.Forms.Label();
             this.ptb_hinhanh = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.lblTrangThai = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.panelMenu.SuspendLayout();
             this.pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_hinhanh)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +66,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 685);
+            this.panelMenu.Size = new System.Drawing.Size(200, 699);
             this.panelMenu.TabIndex = 0;
             // 
             // btnDX
@@ -86,7 +81,7 @@
             this.btnDX.Name = "btnDX";
             this.btnDX.Size = new System.Drawing.Size(200, 70);
             this.btnDX.TabIndex = 7;
-            this.btnDX.Text = "Thoát";
+            this.btnDX.Text = "Đăng Xuất";
             this.btnDX.UseVisualStyleBackColor = false;
             this.btnDX.Click += new System.EventHandler(this.btnDX_Click_1);
             // 
@@ -191,7 +186,7 @@
             // lbl_TenNv
             // 
             this.lbl_TenNv.AutoSize = true;
-            this.lbl_TenNv.Location = new System.Drawing.Point(61, 140);
+            this.lbl_TenNv.Location = new System.Drawing.Point(62, 140);
             this.lbl_TenNv.Name = "lbl_TenNv";
             this.lbl_TenNv.Size = new System.Drawing.Size(35, 13);
             this.lbl_TenNv.TabIndex = 4;
@@ -200,7 +195,7 @@
             // lbl_MANV
             // 
             this.lbl_MANV.AutoSize = true;
-            this.lbl_MANV.Location = new System.Drawing.Point(61, 117);
+            this.lbl_MANV.Location = new System.Drawing.Point(62, 117);
             this.lbl_MANV.Name = "lbl_MANV";
             this.lbl_MANV.Size = new System.Drawing.Size(35, 13);
             this.lbl_MANV.TabIndex = 3;
@@ -237,48 +232,19 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.BackgroundImage = global::ShopQuanAo.Properties.Resources.logo;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(575, 331);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(209, 23);
-            this.progressBar1.TabIndex = 2;
-            this.progressBar1.Visible = false;
-            // 
-            // lblTrangThai
-            // 
-            this.lblTrangThai.AutoSize = true;
-            this.lblTrangThai.Location = new System.Drawing.Point(397, 341);
-            this.lblTrangThai.Name = "lblTrangThai";
-            this.lblTrangThai.Size = new System.Drawing.Size(0, 13);
-            this.lblTrangThai.TabIndex = 3;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 685);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.lblTrangThai);
+            this.ClientSize = new System.Drawing.Size(913, 699);
             this.Controls.Add(this.panelMenu);
             this.IsMdiContainer = true;
             this.Name = "Form1";
@@ -291,12 +257,9 @@
             this.pnl2.ResumeLayout(false);
             this.pnl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_hinhanh)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -312,9 +275,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.BindingSource bindingSource2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label lblTrangThai;
         private System.Windows.Forms.Button btnDX;
         private System.Windows.Forms.PictureBox ptb_hinhanh;
         private System.Windows.Forms.Label lbl_TenNv;

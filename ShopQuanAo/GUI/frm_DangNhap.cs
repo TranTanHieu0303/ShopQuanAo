@@ -48,37 +48,56 @@ namespace ShopQuanAo
                         DialogResult dr = MessageBox.Show("Hôm nay bạn chưa hiện điểm danh, bạn cần điểm danh ngay bây giờ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (dr == DialogResult.OK)
                         {
-                            OpenFileDialog drl = new OpenFileDialog();
-                            if (drl.ShowDialog() == DialogResult.OK)
+                            if (XL.ktVanTayToTai(NV.MANV))
                             {
-                                if (kt.ktVantay(NV.MANV, drl.FileName))
-                                    if (XL.ChamCong(NV.MANV, DateTime.Now))
-                                    {
-                                        MessageBox.Show("Điểm danh thanh công");
-                                        Form1 frm = new Form1();
-                                        frm._nv = XL.DangNhap(txt_UseName.Text, txt_Pass.Text);
-                                        frm.Show();
-                                        this.Hide();
-                                    }
+                                OpenFileDialog drl = new OpenFileDialog();
+                                if (drl.ShowDialog() == DialogResult.OK)
+                                {
+                                    if (kt.ktVantay(NV.MANV, drl.FileName))
+                                        if (XL.ChamCong(NV.MANV, DateTime.Now))
+                                        {
+                                            MessageBox.Show("Điểm danh thanh công");
+                                            Form1 frm = new Form1();
+                                            frm._nv = XL.DangNhap(txt_UseName.Text, txt_Pass.Text);
+                                            frm._frm = this;
+                                            frm.Show();
+                                            this.Hide();
+                                        }
+                                        else
+                                            MessageBox.Show("Điểm danh không thành công");
                                     else
-                                        MessageBox.Show("Điểm danh không thành công");
-                                else
-                                    MessageBox.Show("Vân tay không trung khớp, vui lòng kiểm tra lại");
+                                        MessageBox.Show("Vân tay không trung khớp, vui lòng kiểm tra lại");
 
 
+                                }
                             }
+                            else
+                            {
+                                MessageBox.Show("Bạn Chưa Cài Vân Tay Trên Hệ Thống. Vui lòng liên hệ quản lý để cài vân tay", "Thông Báo");
+                            }    
                         }
                     }
                     else
                     {
                         Form1 frm = new Form1();
                         frm._nv = XL.DangNhap(txt_UseName.Text, txt_Pass.Text);
+                        frm._frm = this;
                         frm.Show();
                         this.Hide();
                     }
                     
                 }
             }
+        }
+
+        private void btn_Thoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void frm_DangNhap_Load(object sender, EventArgs e)
+        {
+            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
         }
     }
 }

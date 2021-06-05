@@ -38,15 +38,19 @@ namespace ShopQuanAo
             System.Windows.Forms.Label uSERNAMELabel;
             System.Windows.Forms.Label pASSLabel;
             System.Windows.Forms.Label cHUCVULabel;
+            System.Windows.Forms.Label dONLUONGLabel;
+            System.Windows.Forms.Label sOCONGLabel;
+            System.Windows.Forms.Label tONGLUONGLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVien));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_Them = new System.Windows.Forms.ToolStripButton();
             this.btn_Xoa = new System.Windows.Forms.ToolStripButton();
             this.btn_CapNhat = new System.Windows.Forms.ToolStripButton();
             this.btn_HoanTac = new System.Windows.Forms.ToolStripButton();
             this.btn_LuuDaTa = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_inbangluong = new System.Windows.Forms.ToolStripButton();
+            this.btn_TraLuong = new System.Windows.Forms.ToolStripButton();
             this.nHANVIENDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +63,11 @@ namespace ShopQuanAo
             this.nHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new ShopQuanAo.DAL.DataSet1();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tONGLUONGTextBox = new System.Windows.Forms.TextBox();
+            this.bANGCHAMCONGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sOCONGTextBox = new System.Windows.Forms.TextBox();
+            this.btn_vantay = new System.Windows.Forms.Button();
+            this.dONLUONGTextBox = new System.Windows.Forms.TextBox();
             this.cHUCVUComboBox = new System.Windows.Forms.ComboBox();
             this.cHUCVUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rdb_Nu = new System.Windows.Forms.RadioButton();
@@ -70,11 +79,13 @@ namespace ShopQuanAo
             this.sDTTextBox = new System.Windows.Forms.TextBox();
             this.uSERNAMETextBox = new System.Windows.Forms.TextBox();
             this.pASSTextBox = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.cHUCVUTableAdapter = new ShopQuanAo.DAL.DataSet1TableAdapters.CHUCVUTableAdapter();
             this.nHANVIENTableAdapter = new ShopQuanAo.DAL.DataSet1TableAdapters.NHANVIENTableAdapter();
             this.tableAdapterManager = new ShopQuanAo.DAL.DataSet1TableAdapters.TableAdapterManager();
+            this.bANGCHAMCONGTableAdapter = new ShopQuanAo.DAL.DataSet1TableAdapters.BANGCHAMCONGTableAdapter();
+            this.cT_NGAYLAMTableAdapter = new ShopQuanAo.DAL.DataSet1TableAdapters.CT_NGAYLAMTableAdapter();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             mANVLabel = new System.Windows.Forms.Label();
             tENNVLabel = new System.Windows.Forms.Label();
             sDTLabel = new System.Windows.Forms.Label();
@@ -82,103 +93,109 @@ namespace ShopQuanAo
             uSERNAMELabel = new System.Windows.Forms.Label();
             pASSLabel = new System.Windows.Forms.Label();
             cHUCVULabel = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            dONLUONGLabel = new System.Windows.Forms.Label();
+            sOCONGLabel = new System.Windows.Forms.Label();
+            tONGLUONGLabel = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHANVIENDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bANGCHAMCONGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHUCVUBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptx_HinhAnh)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mANVLabel
             // 
             mANVLabel.AutoSize = true;
-            mANVLabel.Location = new System.Drawing.Point(160, 54);
+            mANVLabel.Location = new System.Drawing.Point(187, 54);
             mANVLabel.Name = "mANVLabel";
-            mANVLabel.Size = new System.Drawing.Size(95, 16);
+            mANVLabel.Size = new System.Drawing.Size(108, 16);
             mANVLabel.TabIndex = 0;
             mANVLabel.Text = "Mã Nhân Viên:";
             // 
             // tENNVLabel
             // 
             tENNVLabel.AutoSize = true;
-            tENNVLabel.Location = new System.Drawing.Point(160, 83);
+            tENNVLabel.Location = new System.Drawing.Point(187, 83);
             tENNVLabel.Name = "tENNVLabel";
-            tENNVLabel.Size = new System.Drawing.Size(100, 16);
+            tENNVLabel.Size = new System.Drawing.Size(114, 16);
             tENNVLabel.TabIndex = 2;
             tENNVLabel.Text = "Tên Nhân Viên:";
             // 
             // sDTLabel
             // 
             sDTLabel.AutoSize = true;
-            sDTLabel.Location = new System.Drawing.Point(160, 112);
+            sDTLabel.Location = new System.Drawing.Point(187, 112);
             sDTLabel.Name = "sDTLabel";
-            sDTLabel.Size = new System.Drawing.Size(96, 16);
+            sDTLabel.Size = new System.Drawing.Size(110, 16);
             sDTLabel.TabIndex = 6;
             sDTLabel.Text = "Số Điện Thoại:";
             // 
             // gIOITINHLabel
             // 
             gIOITINHLabel.AutoSize = true;
-            gIOITINHLabel.Location = new System.Drawing.Point(516, 25);
+            gIOITINHLabel.Location = new System.Drawing.Point(187, 139);
             gIOITINHLabel.Name = "gIOITINHLabel";
-            gIOITINHLabel.Size = new System.Drawing.Size(64, 16);
+            gIOITINHLabel.Size = new System.Drawing.Size(74, 16);
             gIOITINHLabel.TabIndex = 8;
             gIOITINHLabel.Text = "Giới Tính:";
             // 
             // uSERNAMELabel
             // 
             uSERNAMELabel.AutoSize = true;
-            uSERNAMELabel.Location = new System.Drawing.Point(516, 54);
+            uSERNAMELabel.Location = new System.Drawing.Point(604, 22);
             uSERNAMELabel.Name = "uSERNAMELabel";
-            uSERNAMELabel.Size = new System.Drawing.Size(106, 16);
+            uSERNAMELabel.Size = new System.Drawing.Size(120, 16);
             uSERNAMELabel.TabIndex = 10;
             uSERNAMELabel.Text = "Tên Đăng Nhập:";
             // 
             // pASSLabel
             // 
             pASSLabel.AutoSize = true;
-            pASSLabel.Location = new System.Drawing.Point(516, 83);
+            pASSLabel.Location = new System.Drawing.Point(604, 51);
             pASSLabel.Name = "pASSLabel";
-            pASSLabel.Size = new System.Drawing.Size(69, 16);
+            pASSLabel.Size = new System.Drawing.Size(79, 16);
             pASSLabel.TabIndex = 12;
             pASSLabel.Text = "Mật Khẩu :";
             // 
             // cHUCVULabel
             // 
             cHUCVULabel.AutoSize = true;
-            cHUCVULabel.Location = new System.Drawing.Point(160, 25);
+            cHUCVULabel.Location = new System.Drawing.Point(187, 25);
             cHUCVULabel.Name = "cHUCVULabel";
-            cHUCVULabel.Size = new System.Drawing.Size(60, 16);
+            cHUCVULabel.Size = new System.Drawing.Size(68, 16);
             cHUCVULabel.TabIndex = 14;
             cHUCVULabel.Text = "Chức Vụ:";
             // 
-            // tabControl1
+            // dONLUONGLabel
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(893, 609);
-            this.tabControl1.TabIndex = 0;
+            dONLUONGLabel.AutoSize = true;
+            dONLUONGLabel.Location = new System.Drawing.Point(604, 83);
+            dONLUONGLabel.Name = "dONLUONGLabel";
+            dONLUONGLabel.Size = new System.Drawing.Size(95, 16);
+            dONLUONGLabel.TabIndex = 19;
+            dONLUONGLabel.Text = "Lương Ngày:";
             // 
-            // tabPage1
+            // sOCONGLabel
             // 
-            this.tabPage1.Controls.Add(this.toolStrip1);
-            this.tabPage1.Controls.Add(this.nHANVIENDataGridView);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(885, 583);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Thông tin tài khoản";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            sOCONGLabel.AutoSize = true;
+            sOCONGLabel.Location = new System.Drawing.Point(604, 112);
+            sOCONGLabel.Name = "sOCONGLabel";
+            sOCONGLabel.Size = new System.Drawing.Size(105, 16);
+            sOCONGLabel.TabIndex = 21;
+            sOCONGLabel.Text = "Số Ngày Làm:";
+            // 
+            // tONGLUONGLabel
+            // 
+            tONGLUONGLabel.AutoSize = true;
+            tONGLUONGLabel.Location = new System.Drawing.Point(604, 141);
+            tONGLUONGLabel.Name = "tONGLUONGLabel";
+            tONGLUONGLabel.Size = new System.Drawing.Size(94, 16);
+            tONGLUONGLabel.TabIndex = 22;
+            tONGLUONGLabel.Text = "Tổng Lương:";
             // 
             // toolStrip1
             // 
@@ -187,12 +204,16 @@ namespace ShopQuanAo
             this.btn_Xoa,
             this.btn_CapNhat,
             this.btn_HoanTac,
-            this.btn_LuuDaTa});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 3);
+            this.btn_LuuDaTa,
+            this.toolStripSeparator1,
+            this.btn_inbangluong,
+            this.btn_TraLuong});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(879, 43);
+            this.toolStrip1.Size = new System.Drawing.Size(1112, 43);
             this.toolStrip1.TabIndex = 23;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // btn_Them
             // 
@@ -258,6 +279,37 @@ namespace ShopQuanAo
             this.btn_LuuDaTa.ToolTipText = "Lưu tất cả thông tin đã chỉnh sữa vào DataBase";
             this.btn_LuuDaTa.Click += new System.EventHandler(this.btn_LuuDaTa_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 43);
+            // 
+            // btn_inbangluong
+            // 
+            this.btn_inbangluong.AutoSize = false;
+            this.btn_inbangluong.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inbangluong.Image = global::ShopQuanAo.Properties.Resources.print_icon;
+            this.btn_inbangluong.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_inbangluong.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_inbangluong.Name = "btn_inbangluong";
+            this.btn_inbangluong.Size = new System.Drawing.Size(100, 40);
+            this.btn_inbangluong.Text = "In";
+            this.btn_inbangluong.ToolTipText = "In Bảng Lương Nhân Viên";
+            this.btn_inbangluong.Click += new System.EventHandler(this.btn_inbangluong_Click);
+            // 
+            // btn_TraLuong
+            // 
+            this.btn_TraLuong.AutoSize = false;
+            this.btn_TraLuong.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TraLuong.Image = global::ShopQuanAo.Properties.Resources.payment_icon;
+            this.btn_TraLuong.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_TraLuong.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_TraLuong.Name = "btn_TraLuong";
+            this.btn_TraLuong.Size = new System.Drawing.Size(150, 40);
+            this.btn_TraLuong.Text = "Trả Lương";
+            this.btn_TraLuong.ToolTipText = "Trả Lương Nhân Viên";
+            this.btn_TraLuong.Click += new System.EventHandler(this.btn_TraLuong_Click);
+            // 
             // nHANVIENDataGridView
             // 
             this.nHANVIENDataGridView.AllowUserToAddRows = false;
@@ -274,12 +326,14 @@ namespace ShopQuanAo
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
+            this.tableLayoutPanel1.SetColumnSpan(this.nHANVIENDataGridView, 2);
             this.nHANVIENDataGridView.DataSource = this.nHANVIENBindingSource;
-            this.nHANVIENDataGridView.Location = new System.Drawing.Point(12, 275);
+            this.nHANVIENDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nHANVIENDataGridView.Location = new System.Drawing.Point(3, 356);
             this.nHANVIENDataGridView.Name = "nHANVIENDataGridView";
             this.nHANVIENDataGridView.ReadOnly = true;
             this.nHANVIENDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.nHANVIENDataGridView.Size = new System.Drawing.Size(858, 288);
+            this.nHANVIENDataGridView.Size = new System.Drawing.Size(1106, 347);
             this.nHANVIENDataGridView.TabIndex = 22;
             this.nHANVIENDataGridView.SelectionChanged += new System.EventHandler(this.nHANVIENDataGridView_SelectionChanged_1);
             // 
@@ -354,6 +408,14 @@ namespace ShopQuanAo
             // 
             // groupBox1
             // 
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBox1, 2);
+            this.groupBox1.Controls.Add(tONGLUONGLabel);
+            this.groupBox1.Controls.Add(this.tONGLUONGTextBox);
+            this.groupBox1.Controls.Add(sOCONGLabel);
+            this.groupBox1.Controls.Add(this.sOCONGTextBox);
+            this.groupBox1.Controls.Add(this.btn_vantay);
+            this.groupBox1.Controls.Add(dONLUONGLabel);
+            this.groupBox1.Controls.Add(this.dONLUONGTextBox);
             this.groupBox1.Controls.Add(this.cHUCVUComboBox);
             this.groupBox1.Controls.Add(this.rdb_Nu);
             this.groupBox1.Controls.Add(this.rdb_Nam);
@@ -371,22 +433,66 @@ namespace ShopQuanAo
             this.groupBox1.Controls.Add(pASSLabel);
             this.groupBox1.Controls.Add(this.pASSTextBox);
             this.groupBox1.Controls.Add(cHUCVULabel);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 62);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(858, 207);
+            this.groupBox1.Size = new System.Drawing.Size(1106, 347);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // tONGLUONGTextBox
+            // 
+            this.tONGLUONGTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bANGCHAMCONGBindingSource, "TONGLUONG", true));
+            this.tONGLUONGTextBox.Location = new System.Drawing.Point(752, 139);
+            this.tONGLUONGTextBox.Name = "tONGLUONGTextBox";
+            this.tONGLUONGTextBox.Size = new System.Drawing.Size(219, 22);
+            this.tONGLUONGTextBox.TabIndex = 23;
+            // 
+            // bANGCHAMCONGBindingSource
+            // 
+            this.bANGCHAMCONGBindingSource.DataMember = "BANGCHAMCONG";
+            this.bANGCHAMCONGBindingSource.DataSource = this.dataSet1;
+            // 
+            // sOCONGTextBox
+            // 
+            this.sOCONGTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bANGCHAMCONGBindingSource, "SOCONG", true));
+            this.sOCONGTextBox.Location = new System.Drawing.Point(752, 110);
+            this.sOCONGTextBox.Name = "sOCONGTextBox";
+            this.sOCONGTextBox.Size = new System.Drawing.Size(219, 22);
+            this.sOCONGTextBox.TabIndex = 22;
+            // 
+            // btn_vantay
+            // 
+            this.btn_vantay.FlatAppearance.BorderSize = 0;
+            this.btn_vantay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_vantay.Image = global::ShopQuanAo.Properties.Resources.icon_vantay;
+            this.btn_vantay.Location = new System.Drawing.Point(50, 190);
+            this.btn_vantay.Name = "btn_vantay";
+            this.btn_vantay.Size = new System.Drawing.Size(50, 43);
+            this.btn_vantay.TabIndex = 21;
+            this.btn_vantay.UseVisualStyleBackColor = true;
+            this.btn_vantay.Click += new System.EventHandler(this.btn_vantay_Click);
+            // 
+            // dONLUONGTextBox
+            // 
+            this.dONLUONGTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bANGCHAMCONGBindingSource, "DONLUONG", true));
+            this.dONLUONGTextBox.Location = new System.Drawing.Point(752, 80);
+            this.dONLUONGTextBox.Name = "dONLUONGTextBox";
+            this.dONLUONGTextBox.Size = new System.Drawing.Size(219, 22);
+            this.dONLUONGTextBox.TabIndex = 20;
+            this.dONLUONGTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dONLUONGTextBox_KeyPress);
             // 
             // cHUCVUComboBox
             // 
             this.cHUCVUComboBox.DataSource = this.cHUCVUBindingSource;
             this.cHUCVUComboBox.DisplayMember = "TENCV";
             this.cHUCVUComboBox.FormattingEnabled = true;
-            this.cHUCVUComboBox.Location = new System.Drawing.Point(285, 21);
+            this.cHUCVUComboBox.Location = new System.Drawing.Point(335, 21);
             this.cHUCVUComboBox.Name = "cHUCVUComboBox";
-            this.cHUCVUComboBox.Size = new System.Drawing.Size(190, 24);
+            this.cHUCVUComboBox.Size = new System.Drawing.Size(219, 24);
             this.cHUCVUComboBox.TabIndex = 19;
             this.cHUCVUComboBox.ValueMember = "MACV";
             // 
@@ -398,9 +504,9 @@ namespace ShopQuanAo
             // rdb_Nu
             // 
             this.rdb_Nu.AutoSize = true;
-            this.rdb_Nu.Location = new System.Drawing.Point(787, 23);
+            this.rdb_Nu.Location = new System.Drawing.Point(503, 137);
             this.rdb_Nu.Name = "rdb_Nu";
-            this.rdb_Nu.Size = new System.Drawing.Size(43, 20);
+            this.rdb_Nu.Size = new System.Drawing.Size(45, 20);
             this.rdb_Nu.TabIndex = 19;
             this.rdb_Nu.TabStop = true;
             this.rdb_Nu.Text = "Nữ";
@@ -409,9 +515,9 @@ namespace ShopQuanAo
             // rdb_Nam
             // 
             this.rdb_Nam.AutoSize = true;
-            this.rdb_Nam.Location = new System.Drawing.Point(654, 22);
+            this.rdb_Nam.Location = new System.Drawing.Point(348, 136);
             this.rdb_Nam.Name = "rdb_Nam";
-            this.rdb_Nam.Size = new System.Drawing.Size(55, 20);
+            this.rdb_Nam.Size = new System.Drawing.Size(58, 20);
             this.rdb_Nam.TabIndex = 18;
             this.rdb_Nam.TabStop = true;
             this.rdb_Nam.Text = "Nam";
@@ -419,9 +525,9 @@ namespace ShopQuanAo
             // 
             // btn_openfile
             // 
-            this.btn_openfile.Location = new System.Drawing.Point(30, 161);
+            this.btn_openfile.Location = new System.Drawing.Point(35, 161);
             this.btn_openfile.Name = "btn_openfile";
-            this.btn_openfile.Size = new System.Drawing.Size(75, 23);
+            this.btn_openfile.Size = new System.Drawing.Size(87, 23);
             this.btn_openfile.TabIndex = 17;
             this.btn_openfile.Text = "Open";
             this.btn_openfile.UseVisualStyleBackColor = true;
@@ -429,9 +535,9 @@ namespace ShopQuanAo
             // 
             // ptx_HinhAnh
             // 
-            this.ptx_HinhAnh.Location = new System.Drawing.Point(15, 30);
+            this.ptx_HinhAnh.Location = new System.Drawing.Point(17, 30);
             this.ptx_HinhAnh.Name = "ptx_HinhAnh";
-            this.ptx_HinhAnh.Size = new System.Drawing.Size(113, 125);
+            this.ptx_HinhAnh.Size = new System.Drawing.Size(132, 125);
             this.ptx_HinhAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptx_HinhAnh.TabIndex = 16;
             this.ptx_HinhAnh.TabStop = false;
@@ -439,53 +545,44 @@ namespace ShopQuanAo
             // mANVTextBox
             // 
             this.mANVTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHANVIENBindingSource, "MANV", true));
-            this.mANVTextBox.Location = new System.Drawing.Point(287, 51);
+            this.mANVTextBox.Location = new System.Drawing.Point(335, 51);
             this.mANVTextBox.Name = "mANVTextBox";
-            this.mANVTextBox.Size = new System.Drawing.Size(188, 22);
+            this.mANVTextBox.Size = new System.Drawing.Size(219, 22);
             this.mANVTextBox.TabIndex = 1;
             // 
             // tENNVTextBox
             // 
             this.tENNVTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHANVIENBindingSource, "TENNV", true));
-            this.tENNVTextBox.Location = new System.Drawing.Point(287, 80);
+            this.tENNVTextBox.Location = new System.Drawing.Point(335, 80);
             this.tENNVTextBox.Name = "tENNVTextBox";
-            this.tENNVTextBox.Size = new System.Drawing.Size(188, 22);
+            this.tENNVTextBox.Size = new System.Drawing.Size(219, 22);
             this.tENNVTextBox.TabIndex = 3;
             // 
             // sDTTextBox
             // 
             this.sDTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHANVIENBindingSource, "SDT", true));
-            this.sDTTextBox.Location = new System.Drawing.Point(287, 109);
+            this.sDTTextBox.Location = new System.Drawing.Point(335, 109);
             this.sDTTextBox.Name = "sDTTextBox";
-            this.sDTTextBox.Size = new System.Drawing.Size(188, 22);
+            this.sDTTextBox.Size = new System.Drawing.Size(219, 22);
             this.sDTTextBox.TabIndex = 7;
+            this.sDTTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sDTTextBox_KeyPress);
             // 
             // uSERNAMETextBox
             // 
             this.uSERNAMETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHANVIENBindingSource, "USERNAME", true));
-            this.uSERNAMETextBox.Location = new System.Drawing.Point(654, 51);
+            this.uSERNAMETextBox.Location = new System.Drawing.Point(752, 19);
             this.uSERNAMETextBox.Name = "uSERNAMETextBox";
-            this.uSERNAMETextBox.Size = new System.Drawing.Size(188, 22);
+            this.uSERNAMETextBox.Size = new System.Drawing.Size(219, 22);
             this.uSERNAMETextBox.TabIndex = 11;
             // 
             // pASSTextBox
             // 
             this.pASSTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHANVIENBindingSource, "PASS", true));
-            this.pASSTextBox.Location = new System.Drawing.Point(654, 80);
+            this.pASSTextBox.Location = new System.Drawing.Point(752, 48);
             this.pASSTextBox.Name = "pASSTextBox";
-            this.pASSTextBox.Size = new System.Drawing.Size(188, 22);
+            this.pASSTextBox.Size = new System.Drawing.Size(219, 22);
             this.pASSTextBox.TabIndex = 13;
             this.pASSTextBox.UseSystemPasswordChar = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(885, 583);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Bảng Lương Nhân Viên";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // openFile
             // 
@@ -516,12 +613,39 @@ namespace ShopQuanAo
             this.tableAdapterManager.UpdateOrder = ShopQuanAo.DAL.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VANTAYTableAdapter = null;
             // 
+            // bANGCHAMCONGTableAdapter
+            // 
+            this.bANGCHAMCONGTableAdapter.ClearBeforeFill = true;
+            // 
+            // cT_NGAYLAMTableAdapter
+            // 
+            this.cT_NGAYLAMTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.nHANVIENDataGridView, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 43);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1112, 706);
+            this.tableLayoutPanel1.TabIndex = 24;
+            // 
             // NhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 609);
-            this.Controls.Add(this.tabControl1);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(1112, 749);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.toolStrip1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.HelpButton = true;
             this.Name = "NhanVien";
@@ -529,9 +653,6 @@ namespace ShopQuanAo
             this.Text = "NhanVien";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.NhanVien_Load);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nHANVIENDataGridView)).EndInit();
@@ -539,16 +660,16 @@ namespace ShopQuanAo
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bANGCHAMCONGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHUCVUBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptx_HinhAnh)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btn_Them;
         private System.Windows.Forms.ToolStripButton btn_Xoa;
@@ -578,10 +699,20 @@ namespace ShopQuanAo
         private System.Windows.Forms.TextBox sDTTextBox;
         private System.Windows.Forms.TextBox uSERNAMETextBox;
         private System.Windows.Forms.TextBox pASSTextBox;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.OpenFileDialog openFile;
         private DAL.DataSet1TableAdapters.CHUCVUTableAdapter cHUCVUTableAdapter;
         private DAL.DataSet1TableAdapters.NHANVIENTableAdapter nHANVIENTableAdapter;
         private DAL.DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingSource bANGCHAMCONGBindingSource;
+        private DAL.DataSet1TableAdapters.BANGCHAMCONGTableAdapter bANGCHAMCONGTableAdapter;
+        private System.Windows.Forms.TextBox dONLUONGTextBox;
+        private System.Windows.Forms.Button btn_vantay;
+        private DAL.DataSet1TableAdapters.CT_NGAYLAMTableAdapter cT_NGAYLAMTableAdapter;
+        private System.Windows.Forms.TextBox tONGLUONGTextBox;
+        private System.Windows.Forms.TextBox sOCONGTextBox;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btn_inbangluong;
+        private System.Windows.Forms.ToolStripButton btn_TraLuong;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

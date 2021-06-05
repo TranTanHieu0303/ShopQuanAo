@@ -55,7 +55,34 @@ namespace ShopQuanAo
                 txt_sdt.Enabled = true;
             }
             loadthongtin();
-
+            btn_HoanTac.Visible = false;
+            btn_LuuDaTa.Visible = false;
+            setonly();
+            setdatagridview(hOADONDataGridView);
+            setdatagridview(cT_HOADONDataGridView);
+        }
+        public void setdatagridview(DataGridView dataGridView)
+        {
+            dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("tahoma", 10, FontStyle.Bold);
+            dataGridView.EnableHeadersVisualStyles = false;
+            dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Crimson;
+            dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            for (int i = 0; i < dataGridView.ColumnCount; i++)
+            {
+                dataGridView.Columns[i].DefaultCellStyle.Font = new Font("tahoma", 10);
+            }
+        }
+        public void setonly()
+        {
+            mAHDTextBox.Enabled = false;
+            tENKHTextBox.Enabled = false;
+            tENNVTextBox.Enabled = false;
+            nGAYBDDateTimePicker.Enabled = false;
+            nGAYKTDateTimePicker.Enabled = false;
+            gIAMGIATextBox.Enabled = false;
+            tONGTIENTextBox.Enabled = false;
+            dIACHITextBox.Enabled = false;
+            tRANGTHAIComboBox.Enabled = false;
         }
         public void loadthongtin()
         {
@@ -264,15 +291,15 @@ namespace ShopQuanAo
             if(hOADONDataGridView.CurrentRow !=null)
             {
                 this.cT_HOADONTableAdapter.FillBy(this.dataSet1.CT_HOADON,hOADONDataGridView.CurrentRow.Cells[0].Value.ToString());
-                if (hOADONDataGridView.CurrentRow.Cells[8].Value.ToString() == "Xác Nhận Đơn Hàng")
+                if (hOADONDataGridView.CurrentRow.Cells[8].Value.ToString() != "Đã Giao" && hOADONDataGridView.CurrentRow.Cells[8].Value.ToString() != "Mua tại cửa hàng")
                 {
                     nGAYKTDateTimePicker.Visible = false;
-                    btn_GiaoHang.Visible = true;
+                    btn_CapNhat.Visible = true;
                 }
                 else
                 {
                     nGAYKTDateTimePicker.Visible = true;
-                    btn_GiaoHang.Visible = false;
+                    btn_CapNhat.Visible = false;
                 }
                 kHACHHANGBindingSource.DataSource = xl.layKHACHHANG(hOADONDataGridView.CurrentRow.Cells[1].Value.ToString());
                 if (hOADONDataGridView.CurrentRow.Cells[2].Value.ToString() != "")
@@ -344,7 +371,10 @@ namespace ShopQuanAo
                     }
                     else
                     {
-                        this.hOADONTableAdapter.FillTheoThang(this.dataSet1.HOADON, dtp_ngay.Value.Month, dtp_ngay.Value.Year);
+                        if (cbb_Loc.SelectedIndex == 2)
+                            this.hOADONTableAdapter.FillTheoThang(this.dataSet1.HOADON, dtp_ngay.Value.Month, dtp_ngay.Value.Year);
+                        else
+                            this.hOADONTableAdapter.FilltheoTrangThai(this.dataSet1.HOADON,"Xác Nhận Đơn Hàng");
                     }    
                 }
                 loadthongtin();
@@ -366,11 +396,46 @@ namespace ShopQuanAo
 
         }
 
-        private void btn_inhoadon_Click(object sender, EventArgs e)
+        private void btn_inHoaDon_Click_1(object sender, EventArgs e)
         {
             TranginHoaDon frm = new TranginHoaDon();
             frm._mahd = mAHDTextBox.Text;
             frm.Show();
+        }
+
+        private void btn_CapNhat_Click(object sender, EventArgs e)
+        {
+            btn_LuuDaTa.Visible = true;
+            btn_HoanTac.Visible = true;
+            tRANGTHAIComboBox.Enabled = true;
+        }
+
+        private void tRANGTHAIComboBox_DropDown(object sender, EventArgs e)
+        {
+            tRANGTHAIComboBox.Items.Clear();
+            tRANGTHAIComboBox.Items.Add("Đang Giao");
+            tRANGTHAIComboBox.Items.Add("Đã Giao");
+        }
+
+        private void btn_HoanTac_Click(object sender, EventArgs e)
+        {
+            btn_LuuDaTa.Visible = false;
+            btn_HoanTac.Visible = false;
+            tRANGTHAIComboBox.Enabled = false;
+            this.hOADONTableAdapter.Fill(this.dataSet1.HOADON);
+        }
+
+        private void btn_LuuDaTa_Click(object sender, EventArgs e)
+        {
+            if(xl.catnhatHD(mAHDTextBox.Text,tRANGTHAIComboBox.Text))
+            {
+                MessageBox.Show("Thành Công");
+                
+            }
+            btn_LuuDaTa.Visible = false;
+            btn_HoanTac.Visible = false;
+            tRANGTHAIComboBox.Enabled = false;
+            this.hOADONTableAdapter.Fill(this.dataSet1.HOADON);
         }
     }
 }

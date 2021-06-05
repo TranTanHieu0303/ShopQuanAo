@@ -50,6 +50,8 @@ namespace ShopQuanAo
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdb_Nu = new System.Windows.Forms.RadioButton();
+            this.rdb_Nam = new System.Windows.Forms.RadioButton();
             this.mAKHTextBox = new System.Windows.Forms.TextBox();
             this.tENKHTextBox = new System.Windows.Forms.TextBox();
             this.sDTTextBox = new System.Windows.Forms.TextBox();
@@ -61,8 +63,7 @@ namespace ShopQuanAo
             this.btn_CapNhat = new System.Windows.Forms.ToolStripButton();
             this.btn_HoanTac = new System.Windows.Forms.ToolStripButton();
             this.btn_LuuDaTa = new System.Windows.Forms.ToolStripButton();
-            this.rdb_Nam = new System.Windows.Forms.RadioButton();
-            this.rdb_Nu = new System.Windows.Forms.RadioButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             mAKHLabel = new System.Windows.Forms.Label();
             tENKHLabel = new System.Windows.Forms.Label();
             sDTLabel = new System.Windows.Forms.Label();
@@ -74,7 +75,68 @@ namespace ShopQuanAo
             ((System.ComponentModel.ISupportInitialize)(this.kHACHHANGDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // mAKHLabel
+            // 
+            mAKHLabel.AutoSize = true;
+            mAKHLabel.Location = new System.Drawing.Point(32, 42);
+            mAKHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            mAKHLabel.Name = "mAKHLabel";
+            mAKHLabel.Size = new System.Drawing.Size(120, 16);
+            mAKHLabel.TabIndex = 0;
+            mAKHLabel.Text = "Mã Khách Hàng:";
+            // 
+            // tENKHLabel
+            // 
+            tENKHLabel.AutoSize = true;
+            tENKHLabel.Location = new System.Drawing.Point(32, 74);
+            tENKHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            tENKHLabel.Name = "tENKHLabel";
+            tENKHLabel.Size = new System.Drawing.Size(126, 16);
+            tENKHLabel.TabIndex = 2;
+            tENKHLabel.Text = "Tên Khách Hàng:";
+            // 
+            // sDTLabel
+            // 
+            sDTLabel.AutoSize = true;
+            sDTLabel.Location = new System.Drawing.Point(32, 106);
+            sDTLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            sDTLabel.Name = "sDTLabel";
+            sDTLabel.Size = new System.Drawing.Size(110, 16);
+            sDTLabel.TabIndex = 4;
+            sDTLabel.Text = "Số Điện Thoại:";
+            // 
+            // dIACHILabel
+            // 
+            dIACHILabel.AutoSize = true;
+            dIACHILabel.Location = new System.Drawing.Point(680, 40);
+            dIACHILabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            dIACHILabel.Name = "dIACHILabel";
+            dIACHILabel.Size = new System.Drawing.Size(61, 16);
+            dIACHILabel.TabIndex = 6;
+            dIACHILabel.Text = "Địa Chỉ:";
+            // 
+            // gIOITINHLabel
+            // 
+            gIOITINHLabel.AutoSize = true;
+            gIOITINHLabel.Location = new System.Drawing.Point(680, 72);
+            gIOITINHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            gIOITINHLabel.Name = "gIOITINHLabel";
+            gIOITINHLabel.Size = new System.Drawing.Size(74, 16);
+            gIOITINHLabel.TabIndex = 8;
+            gIOITINHLabel.Text = "Giới Tính:";
+            // 
+            // pASSLabel
+            // 
+            pASSLabel.AutoSize = true;
+            pASSLabel.Location = new System.Drawing.Point(680, 104);
+            pASSLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            pASSLabel.Name = "pASSLabel";
+            pASSLabel.Size = new System.Drawing.Size(75, 16);
+            pASSLabel.TabIndex = 10;
+            pASSLabel.Text = "Mật Khẩu:";
             // 
             // dataSet1
             // 
@@ -121,11 +183,13 @@ namespace ShopQuanAo
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn7});
             this.kHACHHANGDataGridView.DataSource = this.kHACHHANGBindingSource;
-            this.kHACHHANGDataGridView.Location = new System.Drawing.Point(12, 284);
+            this.kHACHHANGDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kHACHHANGDataGridView.Location = new System.Drawing.Point(4, 329);
+            this.kHACHHANGDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.kHACHHANGDataGridView.Name = "kHACHHANGDataGridView";
             this.kHACHHANGDataGridView.ReadOnly = true;
             this.kHACHHANGDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.kHACHHANGDataGridView.Size = new System.Drawing.Size(924, 268);
+            this.kHACHHANGDataGridView.Size = new System.Drawing.Size(1362, 318);
             this.kHACHHANGDataGridView.TabIndex = 1;
             this.kHACHHANGDataGridView.SelectionChanged += new System.EventHandler(this.kHACHHANGDataGridView_SelectionChanged);
             // 
@@ -187,105 +251,84 @@ namespace ShopQuanAo
             this.groupBox1.Controls.Add(gIOITINHLabel);
             this.groupBox1.Controls.Add(pASSLabel);
             this.groupBox1.Controls.Add(this.pASSTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 69);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(924, 209);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(1362, 317);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Tài Khoản";
             // 
-            // mAKHLabel
+            // rdb_Nu
             // 
-            mAKHLabel.AutoSize = true;
-            mAKHLabel.Location = new System.Drawing.Point(21, 34);
-            mAKHLabel.Name = "mAKHLabel";
-            mAKHLabel.Size = new System.Drawing.Size(88, 13);
-            mAKHLabel.TabIndex = 0;
-            mAKHLabel.Text = "Mã Khách Hàng:";
+            this.rdb_Nu.AutoSize = true;
+            this.rdb_Nu.Location = new System.Drawing.Point(1022, 66);
+            this.rdb_Nu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdb_Nu.Name = "rdb_Nu";
+            this.rdb_Nu.Size = new System.Drawing.Size(45, 20);
+            this.rdb_Nu.TabIndex = 13;
+            this.rdb_Nu.TabStop = true;
+            this.rdb_Nu.Text = "Nữ";
+            this.rdb_Nu.UseVisualStyleBackColor = true;
+            // 
+            // rdb_Nam
+            // 
+            this.rdb_Nam.AutoSize = true;
+            this.rdb_Nam.Location = new System.Drawing.Point(827, 69);
+            this.rdb_Nam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdb_Nam.Name = "rdb_Nam";
+            this.rdb_Nam.Size = new System.Drawing.Size(58, 20);
+            this.rdb_Nam.TabIndex = 12;
+            this.rdb_Nam.TabStop = true;
+            this.rdb_Nam.Text = "Nam";
+            this.rdb_Nam.UseVisualStyleBackColor = true;
             // 
             // mAKHTextBox
             // 
             this.mAKHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "MAKH", true));
-            this.mAKHTextBox.Location = new System.Drawing.Point(133, 31);
+            this.mAKHTextBox.Location = new System.Drawing.Point(200, 38);
+            this.mAKHTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mAKHTextBox.Name = "mAKHTextBox";
-            this.mAKHTextBox.Size = new System.Drawing.Size(223, 20);
+            this.mAKHTextBox.Size = new System.Drawing.Size(332, 22);
             this.mAKHTextBox.TabIndex = 1;
-            // 
-            // tENKHLabel
-            // 
-            tENKHLabel.AutoSize = true;
-            tENKHLabel.Location = new System.Drawing.Point(21, 60);
-            tENKHLabel.Name = "tENKHLabel";
-            tENKHLabel.Size = new System.Drawing.Size(92, 13);
-            tENKHLabel.TabIndex = 2;
-            tENKHLabel.Text = "Tên Khách Hàng:";
             // 
             // tENKHTextBox
             // 
             this.tENKHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "TENKH", true));
-            this.tENKHTextBox.Location = new System.Drawing.Point(133, 57);
+            this.tENKHTextBox.Location = new System.Drawing.Point(200, 70);
+            this.tENKHTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tENKHTextBox.Name = "tENKHTextBox";
-            this.tENKHTextBox.Size = new System.Drawing.Size(223, 20);
+            this.tENKHTextBox.Size = new System.Drawing.Size(332, 22);
             this.tENKHTextBox.TabIndex = 3;
-            // 
-            // sDTLabel
-            // 
-            sDTLabel.AutoSize = true;
-            sDTLabel.Location = new System.Drawing.Point(21, 86);
-            sDTLabel.Name = "sDTLabel";
-            sDTLabel.Size = new System.Drawing.Size(78, 13);
-            sDTLabel.TabIndex = 4;
-            sDTLabel.Text = "Số Điện Thoại:";
             // 
             // sDTTextBox
             // 
             this.sDTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "SDT", true));
-            this.sDTTextBox.Location = new System.Drawing.Point(133, 83);
+            this.sDTTextBox.Location = new System.Drawing.Point(200, 102);
+            this.sDTTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.sDTTextBox.Name = "sDTTextBox";
-            this.sDTTextBox.Size = new System.Drawing.Size(223, 20);
+            this.sDTTextBox.Size = new System.Drawing.Size(332, 22);
             this.sDTTextBox.TabIndex = 5;
-            // 
-            // dIACHILabel
-            // 
-            dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(532, 34);
-            dIACHILabel.Name = "dIACHILabel";
-            dIACHILabel.Size = new System.Drawing.Size(44, 13);
-            dIACHILabel.TabIndex = 6;
-            dIACHILabel.Text = "Địa Chỉ:";
+            this.sDTTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.sDTTextBox_KeyPress);
             // 
             // dIACHITextBox
             // 
             this.dIACHITextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "DIACHI", true));
-            this.dIACHITextBox.Location = new System.Drawing.Point(630, 31);
+            this.dIACHITextBox.Location = new System.Drawing.Point(827, 36);
+            this.dIACHITextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dIACHITextBox.Name = "dIACHITextBox";
-            this.dIACHITextBox.Size = new System.Drawing.Size(245, 20);
+            this.dIACHITextBox.Size = new System.Drawing.Size(366, 22);
             this.dIACHITextBox.TabIndex = 7;
-            // 
-            // gIOITINHLabel
-            // 
-            gIOITINHLabel.AutoSize = true;
-            gIOITINHLabel.Location = new System.Drawing.Point(532, 60);
-            gIOITINHLabel.Name = "gIOITINHLabel";
-            gIOITINHLabel.Size = new System.Drawing.Size(54, 13);
-            gIOITINHLabel.TabIndex = 8;
-            gIOITINHLabel.Text = "Giới Tính:";
-            // 
-            // pASSLabel
-            // 
-            pASSLabel.AutoSize = true;
-            pASSLabel.Location = new System.Drawing.Point(532, 86);
-            pASSLabel.Name = "pASSLabel";
-            pASSLabel.Size = new System.Drawing.Size(56, 13);
-            pASSLabel.TabIndex = 10;
-            pASSLabel.Text = "Mật Khẩu:";
             // 
             // pASSTextBox
             // 
             this.pASSTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "PASS", true));
-            this.pASSTextBox.Location = new System.Drawing.Point(630, 83);
+            this.pASSTextBox.Location = new System.Drawing.Point(827, 100);
+            this.pASSTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pASSTextBox.Name = "pASSTextBox";
-            this.pASSTextBox.Size = new System.Drawing.Size(245, 20);
+            this.pASSTextBox.Size = new System.Drawing.Size(366, 22);
             this.pASSTextBox.TabIndex = 11;
             this.pASSTextBox.UseSystemPasswordChar = true;
             // 
@@ -299,7 +342,8 @@ namespace ShopQuanAo
             this.btn_LuuDaTa});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(948, 43);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(1370, 43);
             this.toolStrip1.TabIndex = 24;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -367,40 +411,37 @@ namespace ShopQuanAo
             this.btn_LuuDaTa.ToolTipText = "Lưu tất cả thông tin đã chỉnh sữa vào DataBase";
             this.btn_LuuDaTa.Click += new System.EventHandler(this.btn_LuuDaTa_Click);
             // 
-            // rdb_Nam
+            // tableLayoutPanel1
             // 
-            this.rdb_Nam.AutoSize = true;
-            this.rdb_Nam.Location = new System.Drawing.Point(630, 58);
-            this.rdb_Nam.Name = "rdb_Nam";
-            this.rdb_Nam.Size = new System.Drawing.Size(47, 17);
-            this.rdb_Nam.TabIndex = 12;
-            this.rdb_Nam.TabStop = true;
-            this.rdb_Nam.Text = "Nam";
-            this.rdb_Nam.UseVisualStyleBackColor = true;
-            // 
-            // rdb_Nu
-            // 
-            this.rdb_Nu.AutoSize = true;
-            this.rdb_Nu.Location = new System.Drawing.Point(785, 58);
-            this.rdb_Nu.Name = "rdb_Nu";
-            this.rdb_Nu.Size = new System.Drawing.Size(39, 17);
-            this.rdb_Nu.TabIndex = 13;
-            this.rdb_Nu.TabStop = true;
-            this.rdb_Nu.Text = "Nữ";
-            this.rdb_Nu.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.kHACHHANGDataGridView, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 43);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1370, 651);
+            this.tableLayoutPanel1.TabIndex = 25;
             // 
             // KhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 564);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(1370, 694);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.kHACHHANGDataGridView);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "KhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KhachHang";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.KhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHACHHANGBindingSource)).EndInit();
@@ -409,6 +450,7 @@ namespace ShopQuanAo
             this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,5 +483,6 @@ namespace ShopQuanAo
         private System.Windows.Forms.ToolStripButton btn_LuuDaTa;
         private System.Windows.Forms.RadioButton rdb_Nu;
         private System.Windows.Forms.RadioButton rdb_Nam;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
