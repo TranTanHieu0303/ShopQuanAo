@@ -65,6 +65,7 @@ namespace ShopQuanAo
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btn_thanhtoan = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.flowLP_hoadon = new System.Windows.Forms.FlowLayoutPanel();
             this.txt_tongtien = new System.Windows.Forms.TextBox();
@@ -86,14 +87,27 @@ namespace ShopQuanAo
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.tENSPTextBox = new System.Windows.Forms.TextBox();
+            this.sANPHAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new ShopQuanAo.DAL.DataSet1();
             this.mAHDTextBox1 = new System.Windows.Forms.TextBox();
+            this.cT_HOADONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sOLUONGTextBox = new System.Windows.Forms.TextBox();
             this.dONGIATextBox = new System.Windows.Forms.TextBox();
             this.gIAMGIATextBox1 = new System.Windows.Forms.TextBox();
             this.tHANHTIENTextBox = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.tRANGTHAIComboBox = new System.Windows.Forms.ComboBox();
+            this.hOADONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btn_Xoa = new System.Windows.Forms.ToolStripButton();
+            this.btn_CapNhat = new System.Windows.Forms.ToolStripButton();
+            this.btn_HoanTac = new System.Windows.Forms.ToolStripButton();
+            this.btn_LuuDaTa = new System.Windows.Forms.ToolStripButton();
+            this.btn_inHoaDon = new System.Windows.Forms.ToolStripButton();
             this.tENNVTextBox = new System.Windows.Forms.TextBox();
+            this.nHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tENKHTextBox = new System.Windows.Forms.TextBox();
+            this.kHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mAHDTextBox = new System.Windows.Forms.TextBox();
             this.nGAYBDDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.nGAYKTDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -111,21 +125,13 @@ namespace ShopQuanAo
             this.txt_timkiemHD = new System.Windows.Forms.TextBox();
             this.cbb_timkiem = new System.Windows.Forms.ComboBox();
             this.cT_HOADONDataGridView = new System.Windows.Forms.DataGridView();
-            this.hOADONDataGridView = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tRANGTHAIComboBox = new System.Windows.Forms.ComboBox();
-            this.sANPHAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new ShopQuanAo.DAL.DataSet1();
-            this.cT_HOADONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hOADONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hOADONDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -141,12 +147,6 @@ namespace ShopQuanAo
             this.kHACHHANGTableAdapter = new ShopQuanAo.DAL.DataSet1TableAdapters.KHACHHANGTableAdapter();
             this.nHANVIENTableAdapter = new ShopQuanAo.DAL.DataSet1TableAdapters.NHANVIENTableAdapter();
             this.sANPHAMTableAdapter = new ShopQuanAo.DAL.DataSet1TableAdapters.SANPHAMTableAdapter();
-            this.btn_thanhtoan = new System.Windows.Forms.Button();
-            this.btn_Xoa = new System.Windows.Forms.ToolStripButton();
-            this.btn_CapNhat = new System.Windows.Forms.ToolStripButton();
-            this.btn_HoanTac = new System.Windows.Forms.ToolStripButton();
-            this.btn_LuuDaTa = new System.Windows.Forms.ToolStripButton();
-            this.btn_inHoaDon = new System.Windows.Forms.ToolStripButton();
             mAHDLabel = new System.Windows.Forms.Label();
             mAKHLabel = new System.Windows.Forms.Label();
             mANVLabel = new System.Windows.Forms.Label();
@@ -171,18 +171,18 @@ namespace ShopQuanAo
             this.tabPage2.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sANPHAMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cT_HOADONBindingSource)).BeginInit();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hOADONBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHACHHANGBindingSource)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cT_HOADONDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOADONDataGridView)).BeginInit();
-            this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sANPHAMBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cT_HOADONBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOADONBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHACHHANGBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mAHDLabel
@@ -310,6 +310,15 @@ namespace ShopQuanAo
             tHANHTIENLabel.Size = new System.Drawing.Size(90, 16);
             tHANHTIENLabel.TabIndex = 10;
             tHANHTIENLabel.Text = "Thành Tiền:";
+            // 
+            // tRANGTHAILabel1
+            // 
+            tRANGTHAILabel1.AutoSize = true;
+            tRANGTHAILabel1.Location = new System.Drawing.Point(282, 110);
+            tRANGTHAILabel1.Name = "tRANGTHAILabel1";
+            tRANGTHAILabel1.Size = new System.Drawing.Size(88, 16);
+            tRANGTHAILabel1.TabIndex = 25;
+            tRANGTHAILabel1.Text = "Trạng Thái:";
             // 
             // tabControl1
             // 
@@ -507,6 +516,19 @@ namespace ShopQuanAo
             this.label6.Size = new System.Drawing.Size(53, 16);
             this.label6.TabIndex = 7;
             this.label6.Text = "Mã SP";
+            // 
+            // btn_thanhtoan
+            // 
+            this.btn_thanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_thanhtoan.Image = global::ShopQuanAo.Properties.Resources.Pay_Per_Click_icon;
+            this.btn_thanhtoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_thanhtoan.Location = new System.Drawing.Point(287, 530);
+            this.btn_thanhtoan.Name = "btn_thanhtoan";
+            this.btn_thanhtoan.Size = new System.Drawing.Size(163, 42);
+            this.btn_thanhtoan.TabIndex = 0;
+            this.btn_thanhtoan.Text = "Thanh Toán";
+            this.btn_thanhtoan.UseVisualStyleBackColor = true;
+            this.btn_thanhtoan.Click += new System.EventHandler(this.btn_thanhtoan_Click);
             // 
             // label4
             // 
@@ -740,6 +762,16 @@ namespace ShopQuanAo
             this.tENSPTextBox.Size = new System.Drawing.Size(155, 22);
             this.tENSPTextBox.TabIndex = 24;
             // 
+            // sANPHAMBindingSource
+            // 
+            this.sANPHAMBindingSource.DataMember = "SANPHAM";
+            this.sANPHAMBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // mAHDTextBox1
             // 
             this.mAHDTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cT_HOADONBindingSource, "MAHD", true));
@@ -747,6 +779,11 @@ namespace ShopQuanAo
             this.mAHDTextBox1.Name = "mAHDTextBox1";
             this.mAHDTextBox1.Size = new System.Drawing.Size(155, 22);
             this.mAHDTextBox1.TabIndex = 1;
+            // 
+            // cT_HOADONBindingSource
+            // 
+            this.cT_HOADONBindingSource.DataMember = "CT_HOADON";
+            this.cT_HOADONBindingSource.DataSource = this.dataSet1;
             // 
             // sOLUONGTextBox
             // 
@@ -809,6 +846,99 @@ namespace ShopQuanAo
             this.groupBox6.Text = "Thông tin hóa đơn";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
+            // tRANGTHAIComboBox
+            // 
+            this.tRANGTHAIComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOADONBindingSource, "TRANGTHAI", true));
+            this.tRANGTHAIComboBox.FormattingEnabled = true;
+            this.tRANGTHAIComboBox.Location = new System.Drawing.Point(376, 107);
+            this.tRANGTHAIComboBox.Name = "tRANGTHAIComboBox";
+            this.tRANGTHAIComboBox.Size = new System.Drawing.Size(185, 24);
+            this.tRANGTHAIComboBox.TabIndex = 26;
+            this.tRANGTHAIComboBox.DropDown += new System.EventHandler(this.tRANGTHAIComboBox_DropDown);
+            // 
+            // hOADONBindingSource
+            // 
+            this.hOADONBindingSource.DataMember = "HOADON";
+            this.hOADONBindingSource.DataSource = this.dataSet1;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_Xoa,
+            this.btn_CapNhat,
+            this.btn_HoanTac,
+            this.btn_LuuDaTa,
+            this.btn_inHoaDon});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 209);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(561, 43);
+            this.toolStrip1.TabIndex = 25;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btn_Xoa
+            // 
+            this.btn_Xoa.AutoSize = false;
+            this.btn_Xoa.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xoa.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.Image")));
+            this.btn_Xoa.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(100, 40);
+            this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.ToolTipText = "Xóa tài khoản";
+            // 
+            // btn_CapNhat
+            // 
+            this.btn_CapNhat.AutoSize = false;
+            this.btn_CapNhat.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CapNhat.Image = ((System.Drawing.Image)(resources.GetObject("btn_CapNhat.Image")));
+            this.btn_CapNhat.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_CapNhat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_CapNhat.Name = "btn_CapNhat";
+            this.btn_CapNhat.Size = new System.Drawing.Size(140, 40);
+            this.btn_CapNhat.Text = "Cập Nhật";
+            this.btn_CapNhat.ToolTipText = "Cập Nhật thông tin  tài khoản";
+            this.btn_CapNhat.Click += new System.EventHandler(this.btn_CapNhat_Click);
+            // 
+            // btn_HoanTac
+            // 
+            this.btn_HoanTac.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HoanTac.Image = global::ShopQuanAo.Properties.Resources.arrow_undo_icon;
+            this.btn_HoanTac.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_HoanTac.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_HoanTac.Name = "btn_HoanTac";
+            this.btn_HoanTac.Size = new System.Drawing.Size(134, 40);
+            this.btn_HoanTac.Text = "Hoàn Tác";
+            this.btn_HoanTac.ToolTipText = "Về Trạng Thái Cũ";
+            this.btn_HoanTac.Click += new System.EventHandler(this.btn_HoanTac_Click);
+            // 
+            // btn_LuuDaTa
+            // 
+            this.btn_LuuDaTa.AutoSize = false;
+            this.btn_LuuDaTa.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_LuuDaTa.Image = ((System.Drawing.Image)(resources.GetObject("btn_LuuDaTa.Image")));
+            this.btn_LuuDaTa.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_LuuDaTa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_LuuDaTa.Name = "btn_LuuDaTa";
+            this.btn_LuuDaTa.Size = new System.Drawing.Size(100, 40);
+            this.btn_LuuDaTa.Text = "Lưu";
+            this.btn_LuuDaTa.ToolTipText = "Lưu tất cả thông tin đã chỉnh sữa vào DataBase";
+            this.btn_LuuDaTa.Click += new System.EventHandler(this.btn_LuuDaTa_Click);
+            // 
+            // btn_inHoaDon
+            // 
+            this.btn_inHoaDon.AutoSize = false;
+            this.btn_inHoaDon.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inHoaDon.Image = global::ShopQuanAo.Properties.Resources.print_icon;
+            this.btn_inHoaDon.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_inHoaDon.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_inHoaDon.Name = "btn_inHoaDon";
+            this.btn_inHoaDon.Size = new System.Drawing.Size(100, 40);
+            this.btn_inHoaDon.Text = "In";
+            this.btn_inHoaDon.ToolTipText = "In Bảng Lương Nhân Viên";
+            this.btn_inHoaDon.Click += new System.EventHandler(this.btn_inHoaDon_Click_1);
+            // 
             // tENNVTextBox
             // 
             this.tENNVTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHANVIENBindingSource, "TENNV", true));
@@ -817,6 +947,11 @@ namespace ShopQuanAo
             this.tENNVTextBox.Size = new System.Drawing.Size(186, 22);
             this.tENNVTextBox.TabIndex = 23;
             // 
+            // nHANVIENBindingSource
+            // 
+            this.nHANVIENBindingSource.DataMember = "NHANVIEN";
+            this.nHANVIENBindingSource.DataSource = this.dataSet1;
+            // 
             // tENKHTextBox
             // 
             this.tENKHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "TENKH", true));
@@ -824,6 +959,11 @@ namespace ShopQuanAo
             this.tENKHTextBox.Name = "tENKHTextBox";
             this.tENKHTextBox.Size = new System.Drawing.Size(186, 22);
             this.tENKHTextBox.TabIndex = 22;
+            // 
+            // kHACHHANGBindingSource
+            // 
+            this.kHACHHANGBindingSource.DataMember = "KHACHHANG";
+            this.kHACHHANGBindingSource.DataSource = this.dataSet1;
             // 
             // mAHDTextBox
             // 
@@ -1000,94 +1140,6 @@ namespace ShopQuanAo
             this.cT_HOADONDataGridView.TabIndex = 1;
             this.cT_HOADONDataGridView.SelectionChanged += new System.EventHandler(this.cT_HOADONDataGridView_SelectionChanged);
             // 
-            // hOADONDataGridView
-            // 
-            this.hOADONDataGridView.AllowUserToAddRows = false;
-            this.hOADONDataGridView.AutoGenerateColumns = false;
-            this.hOADONDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.hOADONDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11});
-            this.hOADONDataGridView.DataSource = this.hOADONBindingSource;
-            this.hOADONDataGridView.Location = new System.Drawing.Point(16, 342);
-            this.hOADONDataGridView.Name = "hOADONDataGridView";
-            this.hOADONDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.hOADONDataGridView.Size = new System.Drawing.Size(571, 268);
-            this.hOADONDataGridView.TabIndex = 0;
-            this.hOADONDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.hOADONDataGridView_CellContentClick);
-            this.hOADONDataGridView.SelectionChanged += new System.EventHandler(this.hOADONDataGridView_SelectionChanged);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_Xoa,
-            this.btn_CapNhat,
-            this.btn_HoanTac,
-            this.btn_LuuDaTa,
-            this.btn_inHoaDon});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 209);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(561, 43);
-            this.toolStrip1.TabIndex = 25;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tRANGTHAILabel1
-            // 
-            tRANGTHAILabel1.AutoSize = true;
-            tRANGTHAILabel1.Location = new System.Drawing.Point(282, 110);
-            tRANGTHAILabel1.Name = "tRANGTHAILabel1";
-            tRANGTHAILabel1.Size = new System.Drawing.Size(88, 16);
-            tRANGTHAILabel1.TabIndex = 25;
-            tRANGTHAILabel1.Text = "Trạng Thái:";
-            // 
-            // tRANGTHAIComboBox
-            // 
-            this.tRANGTHAIComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hOADONBindingSource, "TRANGTHAI", true));
-            this.tRANGTHAIComboBox.FormattingEnabled = true;
-            this.tRANGTHAIComboBox.Location = new System.Drawing.Point(376, 107);
-            this.tRANGTHAIComboBox.Name = "tRANGTHAIComboBox";
-            this.tRANGTHAIComboBox.Size = new System.Drawing.Size(185, 24);
-            this.tRANGTHAIComboBox.TabIndex = 26;
-            this.tRANGTHAIComboBox.DropDown += new System.EventHandler(this.tRANGTHAIComboBox_DropDown);
-            // 
-            // sANPHAMBindingSource
-            // 
-            this.sANPHAMBindingSource.DataMember = "SANPHAM";
-            this.sANPHAMBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cT_HOADONBindingSource
-            // 
-            this.cT_HOADONBindingSource.DataMember = "CT_HOADON";
-            this.cT_HOADONBindingSource.DataSource = this.dataSet1;
-            // 
-            // hOADONBindingSource
-            // 
-            this.hOADONBindingSource.DataMember = "HOADON";
-            this.hOADONBindingSource.DataSource = this.dataSet1;
-            // 
-            // nHANVIENBindingSource
-            // 
-            this.nHANVIENBindingSource.DataMember = "NHANVIEN";
-            this.nHANVIENBindingSource.DataSource = this.dataSet1;
-            // 
-            // kHACHHANGBindingSource
-            // 
-            this.kHACHHANGBindingSource.DataMember = "KHACHHANG";
-            this.kHACHHANGBindingSource.DataSource = this.dataSet1;
-            // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "MAHD";
@@ -1129,6 +1181,30 @@ namespace ShopQuanAo
             this.dataGridViewTextBoxColumn17.HeaderText = "Thành Tiền";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            // 
+            // hOADONDataGridView
+            // 
+            this.hOADONDataGridView.AllowUserToAddRows = false;
+            this.hOADONDataGridView.AutoGenerateColumns = false;
+            this.hOADONDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.hOADONDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11});
+            this.hOADONDataGridView.DataSource = this.hOADONBindingSource;
+            this.hOADONDataGridView.Location = new System.Drawing.Point(16, 342);
+            this.hOADONDataGridView.Name = "hOADONDataGridView";
+            this.hOADONDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.hOADONDataGridView.Size = new System.Drawing.Size(571, 268);
+            this.hOADONDataGridView.TabIndex = 0;
+            this.hOADONDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.hOADONDataGridView_CellContentClick);
+            this.hOADONDataGridView.SelectionChanged += new System.EventHandler(this.hOADONDataGridView_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1232,82 +1308,6 @@ namespace ShopQuanAo
             // 
             this.sANPHAMTableAdapter.ClearBeforeFill = true;
             // 
-            // btn_thanhtoan
-            // 
-            this.btn_thanhtoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_thanhtoan.Image = global::ShopQuanAo.Properties.Resources.Pay_Per_Click_icon;
-            this.btn_thanhtoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_thanhtoan.Location = new System.Drawing.Point(287, 530);
-            this.btn_thanhtoan.Name = "btn_thanhtoan";
-            this.btn_thanhtoan.Size = new System.Drawing.Size(163, 42);
-            this.btn_thanhtoan.TabIndex = 0;
-            this.btn_thanhtoan.Text = "Thanh Toán";
-            this.btn_thanhtoan.UseVisualStyleBackColor = true;
-            this.btn_thanhtoan.Click += new System.EventHandler(this.btn_thanhtoan_Click);
-            // 
-            // btn_Xoa
-            // 
-            this.btn_Xoa.AutoSize = false;
-            this.btn_Xoa.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Xoa.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa.Image")));
-            this.btn_Xoa.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btn_Xoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(100, 40);
-            this.btn_Xoa.Text = "Xóa";
-            this.btn_Xoa.ToolTipText = "Xóa tài khoản";
-            // 
-            // btn_CapNhat
-            // 
-            this.btn_CapNhat.AutoSize = false;
-            this.btn_CapNhat.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CapNhat.Image = ((System.Drawing.Image)(resources.GetObject("btn_CapNhat.Image")));
-            this.btn_CapNhat.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btn_CapNhat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_CapNhat.Name = "btn_CapNhat";
-            this.btn_CapNhat.Size = new System.Drawing.Size(140, 40);
-            this.btn_CapNhat.Text = "Cập Nhật";
-            this.btn_CapNhat.ToolTipText = "Cập Nhật thông tin  tài khoản";
-            this.btn_CapNhat.Click += new System.EventHandler(this.btn_CapNhat_Click);
-            // 
-            // btn_HoanTac
-            // 
-            this.btn_HoanTac.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HoanTac.Image = global::ShopQuanAo.Properties.Resources.arrow_undo_icon;
-            this.btn_HoanTac.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btn_HoanTac.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_HoanTac.Name = "btn_HoanTac";
-            this.btn_HoanTac.Size = new System.Drawing.Size(134, 40);
-            this.btn_HoanTac.Text = "Hoàn Tác";
-            this.btn_HoanTac.ToolTipText = "Về Trạng Thái Cũ";
-            this.btn_HoanTac.Click += new System.EventHandler(this.btn_HoanTac_Click);
-            // 
-            // btn_LuuDaTa
-            // 
-            this.btn_LuuDaTa.AutoSize = false;
-            this.btn_LuuDaTa.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_LuuDaTa.Image = ((System.Drawing.Image)(resources.GetObject("btn_LuuDaTa.Image")));
-            this.btn_LuuDaTa.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btn_LuuDaTa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_LuuDaTa.Name = "btn_LuuDaTa";
-            this.btn_LuuDaTa.Size = new System.Drawing.Size(100, 40);
-            this.btn_LuuDaTa.Text = "Lưu";
-            this.btn_LuuDaTa.ToolTipText = "Lưu tất cả thông tin đã chỉnh sữa vào DataBase";
-            this.btn_LuuDaTa.Click += new System.EventHandler(this.btn_LuuDaTa_Click);
-            // 
-            // btn_inHoaDon
-            // 
-            this.btn_inHoaDon.AutoSize = false;
-            this.btn_inHoaDon.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_inHoaDon.Image = global::ShopQuanAo.Properties.Resources.print_icon;
-            this.btn_inHoaDon.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btn_inHoaDon.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_inHoaDon.Name = "btn_inHoaDon";
-            this.btn_inHoaDon.Size = new System.Drawing.Size(100, 40);
-            this.btn_inHoaDon.Text = "In";
-            this.btn_inHoaDon.ToolTipText = "In Bảng Lương Nhân Viên";
-            this.btn_inHoaDon.Click += new System.EventHandler(this.btn_inHoaDon_Click_1);
-            // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1315,6 +1315,7 @@ namespace ShopQuanAo
             this.ClientSize = new System.Drawing.Size(1123, 657);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HoaDon";
             this.Text = "HoaDon";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1333,22 +1334,22 @@ namespace ShopQuanAo
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sANPHAMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cT_HOADONBindingSource)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hOADONBindingSource)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHACHHANGBindingSource)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cT_HOADONDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hOADONDataGridView)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sANPHAMBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cT_HOADONBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hOADONBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHACHHANGBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

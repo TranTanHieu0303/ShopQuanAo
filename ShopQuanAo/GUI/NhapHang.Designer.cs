@@ -47,6 +47,12 @@ namespace ShopQuanAo
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.gr = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_tienchu = new System.Windows.Forms.Label();
+            this.bnt_xuatphieunhap = new System.Windows.Forms.Button();
+            this.lbl_tongtiennhap = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLP_timkiemsp = new System.Windows.Forms.FlowLayoutPanel();
@@ -58,12 +64,6 @@ namespace ShopQuanAo
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_sl = new System.Windows.Forms.NumericUpDown();
-            this.gr = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_tienchu = new System.Windows.Forms.Label();
-            this.bnt_xuatphieunhap = new System.Windows.Forms.Button();
-            this.lbl_tongtiennhap = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLP_hoadon = new System.Windows.Forms.FlowLayoutPanel();
@@ -100,6 +100,9 @@ namespace ShopQuanAo
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btn_CapNhat = new System.Windows.Forms.ToolStripButton();
+            this.btn_inbangluong = new System.Windows.Forms.ToolStripButton();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_timmanhap = new System.Windows.Forms.TextBox();
             this.mANHAPTextBox = new System.Windows.Forms.TextBox();
@@ -111,9 +114,6 @@ namespace ShopQuanAo
             this.tableAdapterManager = new ShopQuanAo.DAL.DataSet1TableAdapters.TableAdapterManager();
             this.cT_NHAPHANGTableAdapter = new ShopQuanAo.DAL.DataSet1TableAdapters.CT_NHAPHANGTableAdapter();
             this.nHAPHANGTableAdapter = new ShopQuanAo.DAL.DataSet1TableAdapters.NHAPHANGTableAdapter();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btn_CapNhat = new System.Windows.Forms.ToolStripButton();
-            this.btn_inbangluong = new System.Windows.Forms.ToolStripButton();
             dONGIALabel1 = new System.Windows.Forms.Label();
             sOLUONGLabel1 = new System.Windows.Forms.Label();
             tENSPLabel = new System.Windows.Forms.Label();
@@ -129,11 +129,11 @@ namespace ShopQuanAo
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.gr.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_sl)).BeginInit();
-            this.gr.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -302,6 +302,65 @@ namespace ShopQuanAo
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1157, 530);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
+            // gr
+            // 
+            this.gr.Controls.Add(this.label4);
+            this.gr.Controls.Add(this.label3);
+            this.gr.Controls.Add(this.lbl_tienchu);
+            this.gr.Controls.Add(this.bnt_xuatphieunhap);
+            this.gr.Controls.Add(this.lbl_tongtiennhap);
+            this.gr.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gr.Location = new System.Drawing.Point(641, 343);
+            this.gr.Name = "gr";
+            this.gr.Size = new System.Drawing.Size(513, 184);
+            this.gr.TabIndex = 8;
+            this.gr.TabStop = false;
+            this.gr.Text = "Thanh Toán";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Bằng Chữ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Tổng tiền";
+            // 
+            // lbl_tienchu
+            // 
+            this.lbl_tienchu.Location = new System.Drawing.Point(156, 64);
+            this.lbl_tienchu.Name = "lbl_tienchu";
+            this.lbl_tienchu.Size = new System.Drawing.Size(353, 54);
+            this.lbl_tienchu.TabIndex = 5;
+            this.lbl_tienchu.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // bnt_xuatphieunhap
+            // 
+            this.bnt_xuatphieunhap.Location = new System.Drawing.Point(314, 127);
+            this.bnt_xuatphieunhap.Name = "bnt_xuatphieunhap";
+            this.bnt_xuatphieunhap.Size = new System.Drawing.Size(177, 38);
+            this.bnt_xuatphieunhap.TabIndex = 6;
+            this.bnt_xuatphieunhap.Text = "Xuất Phiếu Nhập";
+            this.bnt_xuatphieunhap.UseVisualStyleBackColor = true;
+            this.bnt_xuatphieunhap.Click += new System.EventHandler(this.bnt_xuatphieunhap_Click);
+            // 
+            // lbl_tongtiennhap
+            // 
+            this.lbl_tongtiennhap.Location = new System.Drawing.Point(243, 16);
+            this.lbl_tongtiennhap.Name = "lbl_tongtiennhap";
+            this.lbl_tongtiennhap.Size = new System.Drawing.Size(266, 23);
+            this.lbl_tongtiennhap.TabIndex = 4;
+            this.lbl_tongtiennhap.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.tableLayoutPanel4);
@@ -415,65 +474,6 @@ namespace ShopQuanAo
             this.txt_sl.TabIndex = 9;
             this.txt_sl.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_sl_KeyUp);
             this.txt_sl.Leave += new System.EventHandler(this.txt_sl_Leave);
-            // 
-            // gr
-            // 
-            this.gr.Controls.Add(this.label4);
-            this.gr.Controls.Add(this.label3);
-            this.gr.Controls.Add(this.lbl_tienchu);
-            this.gr.Controls.Add(this.bnt_xuatphieunhap);
-            this.gr.Controls.Add(this.lbl_tongtiennhap);
-            this.gr.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gr.Location = new System.Drawing.Point(641, 343);
-            this.gr.Name = "gr";
-            this.gr.Size = new System.Drawing.Size(513, 184);
-            this.gr.TabIndex = 8;
-            this.gr.TabStop = false;
-            this.gr.Text = "Thanh Toán";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 64);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Bằng Chữ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tổng tiền";
-            // 
-            // lbl_tienchu
-            // 
-            this.lbl_tienchu.Location = new System.Drawing.Point(156, 64);
-            this.lbl_tienchu.Name = "lbl_tienchu";
-            this.lbl_tienchu.Size = new System.Drawing.Size(353, 54);
-            this.lbl_tienchu.TabIndex = 5;
-            this.lbl_tienchu.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // bnt_xuatphieunhap
-            // 
-            this.bnt_xuatphieunhap.Location = new System.Drawing.Point(314, 127);
-            this.bnt_xuatphieunhap.Name = "bnt_xuatphieunhap";
-            this.bnt_xuatphieunhap.Size = new System.Drawing.Size(177, 38);
-            this.bnt_xuatphieunhap.TabIndex = 6;
-            this.bnt_xuatphieunhap.Text = "Xuất Phiếu Nhập";
-            this.bnt_xuatphieunhap.UseVisualStyleBackColor = true;
-            this.bnt_xuatphieunhap.Click += new System.EventHandler(this.bnt_xuatphieunhap_Click);
-            // 
-            // lbl_tongtiennhap
-            // 
-            this.lbl_tongtiennhap.Location = new System.Drawing.Point(243, 16);
-            this.lbl_tongtiennhap.Name = "lbl_tongtiennhap";
-            this.lbl_tongtiennhap.Size = new System.Drawing.Size(266, 23);
-            this.lbl_tongtiennhap.TabIndex = 4;
-            this.lbl_tongtiennhap.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // groupBox6
             // 
@@ -842,6 +842,44 @@ namespace ShopQuanAo
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông thi phiếu nhập";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_CapNhat,
+            this.btn_inbangluong});
+            this.toolStrip1.Location = new System.Drawing.Point(3, 222);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(569, 43);
+            this.toolStrip1.TabIndex = 24;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btn_CapNhat
+            // 
+            this.btn_CapNhat.AutoSize = false;
+            this.btn_CapNhat.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CapNhat.Image = ((System.Drawing.Image)(resources.GetObject("btn_CapNhat.Image")));
+            this.btn_CapNhat.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_CapNhat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_CapNhat.Name = "btn_CapNhat";
+            this.btn_CapNhat.Size = new System.Drawing.Size(140, 40);
+            this.btn_CapNhat.Text = "Làm Mới";
+            this.btn_CapNhat.ToolTipText = "Cập Nhật thông tin  tài khoản";
+            this.btn_CapNhat.Click += new System.EventHandler(this.btn_lammoinh_Click);
+            // 
+            // btn_inbangluong
+            // 
+            this.btn_inbangluong.AutoSize = false;
+            this.btn_inbangluong.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inbangluong.Image = global::ShopQuanAo.Properties.Resources.print_icon;
+            this.btn_inbangluong.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_inbangluong.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_inbangluong.Name = "btn_inbangluong";
+            this.btn_inbangluong.Size = new System.Drawing.Size(100, 40);
+            this.btn_inbangluong.Text = "In";
+            this.btn_inbangluong.ToolTipText = "In Bảng Lương Nhân Viên";
+            this.btn_inbangluong.Click += new System.EventHandler(this.btn_inPN_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -929,44 +967,6 @@ namespace ShopQuanAo
             // 
             this.nHAPHANGTableAdapter.ClearBeforeFill = true;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_CapNhat,
-            this.btn_inbangluong});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 222);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(569, 43);
-            this.toolStrip1.TabIndex = 24;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btn_CapNhat
-            // 
-            this.btn_CapNhat.AutoSize = false;
-            this.btn_CapNhat.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_CapNhat.Image = ((System.Drawing.Image)(resources.GetObject("btn_CapNhat.Image")));
-            this.btn_CapNhat.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btn_CapNhat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_CapNhat.Name = "btn_CapNhat";
-            this.btn_CapNhat.Size = new System.Drawing.Size(140, 40);
-            this.btn_CapNhat.Text = "Làm Mới";
-            this.btn_CapNhat.ToolTipText = "Cập Nhật thông tin  tài khoản";
-            this.btn_CapNhat.Click += new System.EventHandler(this.btn_lammoinh_Click);
-            // 
-            // btn_inbangluong
-            // 
-            this.btn_inbangluong.AutoSize = false;
-            this.btn_inbangluong.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_inbangluong.Image = global::ShopQuanAo.Properties.Resources.print_icon;
-            this.btn_inbangluong.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btn_inbangluong.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_inbangluong.Name = "btn_inbangluong";
-            this.btn_inbangluong.Size = new System.Drawing.Size(100, 40);
-            this.btn_inbangluong.Text = "In";
-            this.btn_inbangluong.ToolTipText = "In Bảng Lương Nhân Viên";
-            this.btn_inbangluong.Click += new System.EventHandler(this.btn_inPN_Click);
-            // 
             // NhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -975,6 +975,7 @@ namespace ShopQuanAo
             this.ClientSize = new System.Drawing.Size(1177, 581);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NhapHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NhapHang";
@@ -984,13 +985,13 @@ namespace ShopQuanAo
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.gr.ResumeLayout(false);
+            this.gr.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_sl)).EndInit();
-            this.gr.ResumeLayout(false);
-            this.gr.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

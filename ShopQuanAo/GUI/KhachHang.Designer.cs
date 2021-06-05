@@ -185,7 +185,7 @@ namespace ShopQuanAo
             this.kHACHHANGDataGridView.DataSource = this.kHACHHANGBindingSource;
             this.kHACHHANGDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kHACHHANGDataGridView.Location = new System.Drawing.Point(4, 329);
-            this.kHACHHANGDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.kHACHHANGDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.kHACHHANGDataGridView.Name = "kHACHHANGDataGridView";
             this.kHACHHANGDataGridView.ReadOnly = true;
             this.kHACHHANGDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -253,9 +253,9 @@ namespace ShopQuanAo
             this.groupBox1.Controls.Add(this.pASSTextBox);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(4, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1362, 317);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -265,7 +265,7 @@ namespace ShopQuanAo
             // 
             this.rdb_Nu.AutoSize = true;
             this.rdb_Nu.Location = new System.Drawing.Point(1022, 66);
-            this.rdb_Nu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdb_Nu.Margin = new System.Windows.Forms.Padding(4);
             this.rdb_Nu.Name = "rdb_Nu";
             this.rdb_Nu.Size = new System.Drawing.Size(45, 20);
             this.rdb_Nu.TabIndex = 13;
@@ -277,7 +277,7 @@ namespace ShopQuanAo
             // 
             this.rdb_Nam.AutoSize = true;
             this.rdb_Nam.Location = new System.Drawing.Point(827, 69);
-            this.rdb_Nam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdb_Nam.Margin = new System.Windows.Forms.Padding(4);
             this.rdb_Nam.Name = "rdb_Nam";
             this.rdb_Nam.Size = new System.Drawing.Size(58, 20);
             this.rdb_Nam.TabIndex = 12;
@@ -289,7 +289,7 @@ namespace ShopQuanAo
             // 
             this.mAKHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "MAKH", true));
             this.mAKHTextBox.Location = new System.Drawing.Point(200, 38);
-            this.mAKHTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mAKHTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.mAKHTextBox.Name = "mAKHTextBox";
             this.mAKHTextBox.Size = new System.Drawing.Size(332, 22);
             this.mAKHTextBox.TabIndex = 1;
@@ -298,7 +298,7 @@ namespace ShopQuanAo
             // 
             this.tENKHTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "TENKH", true));
             this.tENKHTextBox.Location = new System.Drawing.Point(200, 70);
-            this.tENKHTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tENKHTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.tENKHTextBox.Name = "tENKHTextBox";
             this.tENKHTextBox.Size = new System.Drawing.Size(332, 22);
             this.tENKHTextBox.TabIndex = 3;
@@ -307,7 +307,7 @@ namespace ShopQuanAo
             // 
             this.sDTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "SDT", true));
             this.sDTTextBox.Location = new System.Drawing.Point(200, 102);
-            this.sDTTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sDTTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.sDTTextBox.Name = "sDTTextBox";
             this.sDTTextBox.Size = new System.Drawing.Size(332, 22);
             this.sDTTextBox.TabIndex = 5;
@@ -317,7 +317,7 @@ namespace ShopQuanAo
             // 
             this.dIACHITextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "DIACHI", true));
             this.dIACHITextBox.Location = new System.Drawing.Point(827, 36);
-            this.dIACHITextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dIACHITextBox.Margin = new System.Windows.Forms.Padding(4);
             this.dIACHITextBox.Name = "dIACHITextBox";
             this.dIACHITextBox.Size = new System.Drawing.Size(366, 22);
             this.dIACHITextBox.TabIndex = 7;
@@ -326,7 +326,7 @@ namespace ShopQuanAo
             // 
             this.pASSTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "PASS", true));
             this.pASSTextBox.Location = new System.Drawing.Point(827, 100);
-            this.pASSTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pASSTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.pASSTextBox.Name = "pASSTextBox";
             this.pASSTextBox.Size = new System.Drawing.Size(366, 22);
             this.pASSTextBox.TabIndex = 11;
@@ -419,7 +419,7 @@ namespace ShopQuanAo
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 43);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -437,7 +437,8 @@ namespace ShopQuanAo
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KhachHang";

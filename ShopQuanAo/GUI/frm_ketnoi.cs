@@ -75,7 +75,10 @@ namespace ShopQuanAo
                     con = @"Data Source=" + _ServerName + ";Initial Catalog=QL_SHOPQUANAO_1;Integrated Security=True";
             }
             if (xl.ketnoiBD(con))
-                MessageBox.Show("thanh cong");
+            {
+                MessageBox.Show("Kết Nối Thành Công, Hãy Mở Lại Ứng Dụng");
+                Application.Exit();
+            }
             else
                 MessageBox.Show("that bai");
         }
